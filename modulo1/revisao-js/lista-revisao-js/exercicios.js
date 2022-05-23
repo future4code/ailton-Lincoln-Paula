@@ -22,12 +22,21 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    const par = array => array % 2 === 0
+  return array.filter(par)
+
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+        let arrayVazia = []
+        for (item of array){
+          if (item % 2 === 0){
+            arrayVazia.push(Math.pow(item,2));
+          }
+          }
+          return arrayVazia
+
 }
 
 // EXERCÍCIO 06
