@@ -116,7 +116,11 @@ return newObj
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+
+let pessoasAutorizadas = pessoas.filter((obj) => {
+return obj.altura >= 1.5 && obj.idade > 14 && obj.idade < 60
+})
+return  pessoasAutorizadas
 }
 
 // EXERCÍCIO 13B
