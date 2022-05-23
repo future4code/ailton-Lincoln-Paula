@@ -68,7 +68,12 @@ diferenca: diferenca}
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+let arrayVazia = []
+for (let i = 0; arrayVazia.length < n; i ++){
+    if(i % 2 === 0){
+        arrayVazia.push(i)
+    }
+} return arrayVazia
 }
 
 // EXERCÍCIO 09
