@@ -78,12 +78,22 @@ for (let i = 0; arrayVazia.length < n; i ++){
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+let verificaTriangulo 
+if(ladoA === ladoB && ladoB === ladoC){
+verificaTriangulo = "Equilátero"
+}else if(ladoA === ladoB || ladoB === ladoC || ladoA === ladoC){
+verificaTriangulo = "Isósceles"
+}else{
+verificaTriangulo = "Escaleno"
+}return verificaTriangulo
 }
 
-// EXERCÍCIO 10
+// EXERCÍCIO 10 //Só deu com arrow function !!
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+    let arrayVazia =[]
+    array.sort((a,b) => a-b)
+    arrayVazia.push(array[array.length-2], array[1]);
+    return arrayVazia   
 }
 
 // EXERCÍCIO 11
