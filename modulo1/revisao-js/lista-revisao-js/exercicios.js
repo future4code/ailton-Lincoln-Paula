@@ -49,6 +49,21 @@ function retornaMaiorNumero(array) {
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
 
+let maiorNumero = num1
+let maiorDivisivelPorMenor = true
+let diferenca = Math.abs(num1-num2) //Retorna número absoluto
+
+if (num2>num1){
+    maiorNumero = num2;
+    maiorDivisivelPorMenor = (maiorNumero % num1 === 0);
+} else {
+    maiorDivisivelPorMenor = (maiorNumero % num2 === 0);
+}
+
+return {
+maiorNumero: maiorNumero,
+maiorDivisivelPorMenor: maiorDivisivelPorMenor,
+diferenca: diferenca}
 }
 
 // EXERCÍCIO 08
