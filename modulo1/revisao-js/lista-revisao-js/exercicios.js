@@ -32,17 +32,19 @@ function retornaNumerosParesElevadosADois(array) {
         let arrayVazia = []
         for (item of array){
           if (item % 2 === 0){
-            arrayVazia.push(Math.pow(item,2));
-          }
-          }
-          return arrayVazia
+            arrayVazia.push(Math.pow(item,2));}
+        }
+            return arrayVazia
 
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
+    return array.reduce(function(a,b){
+        return Math.max(a, b)
+    })}
   
-}
+
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
