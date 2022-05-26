@@ -44,9 +44,7 @@ div img {
     border-radius: 5px;
     font-size: 20px;
     color: white;
-    position: absolute;
-    bottom: 0vh;
-    right: 100px;
+
 }
 
 
@@ -87,7 +85,7 @@ div img {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
-    position: relative;
+
 }
 
 
