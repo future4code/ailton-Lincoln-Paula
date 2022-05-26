@@ -140,3 +140,11 @@ td button {
     width: 2vw;
     height: 3vh;
 }
+.buttons-comprar:hover{
+color: red;
+background-color: black;
+}
+.buttons-comprar:active{
+    background-color: blue;
+    color: black;
+}
