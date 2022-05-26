@@ -116,7 +116,7 @@ td button {
     width: 150px;
     height: 30px;
     border-radius: 5px;
-    color: black;
+    border: none;
 }
 
 .container-do-search {
@@ -150,6 +150,7 @@ td button {
 .buttons-comprar:hover{
 color: red;
 background-color: black;
+
 }
 .buttons-comprar:active{
     background-color: blue;
