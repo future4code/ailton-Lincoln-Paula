@@ -34,7 +34,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    background: white;
 }
 
 .botao-amarelo {
@@ -134,4 +134,5 @@ td button {
 }
 .tabela-comprar{
     margin: auto;
+
 }
