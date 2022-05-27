@@ -1,0 +1,194 @@
+/* ESTILIZAÇÃO DA MINHA PRIMEIRA PÁGINA (INDEX) */
+
+.header-index{
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 15px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.body-index{
+    background-color: chocolate;
+}
+.navBar{
+    color: white;
+    background-color: white;
+}
+.navBar-index{
+    background-color: white;
+    color: black;
+}
+.footer-index{
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ESTILIZAÇÃO CONTROLE DE ESTOQUE */
+.header-control{
+background-color: white;
+text-align: center;
+font-size: 50px;
+padding-top: 1px;
+border-radius: 10px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.body-control{
+    background-color: chocolate;
+
+}
+
+.navBar-control{
+    color: black;
+    background-color: white;
+}
+.tamanho-celulares{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+.title-control{
+    background-color: white;
+    text-align: center;
+    margin: 15px;
+}
+.footer-control{
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ESTILIZAÇÃO ADICIONAR PRODUTO */
+
+.body-add{
+ background-color: chocolate;
+}
+.header-add{
+    background-color: white;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 1px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navBar-add{
+    color: black;
+    background-color: white;
+    display: inline;
+}
+.title-add{
+    background-color: white;
+    text-align: center;
+    margin: 15px;
+
+}
+.label-add{
+ background-color:  white;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 14px;
+
+
+}
+.input-add{
+    margin-left: 10px;
+    
+}
+.button-add{
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.footer-add{
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ESTILIZAÇÃO FUNCIONÁRIOS */
+.body-func{
+    background-color: chocolate;
+}
+.header-func{
+    background-color: white;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 1px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navBar-func{
+    color: black;
+    background-color: white;
+    display: inline;
+}
+.title-func{
+    background-color: white;
+    text-align: center;
+    margin: 15px;
+
+}
+.footer-func{
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.list-func{
+    color: black;
+    display: inline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+/* ESTILIZAÇÃO DA PÁGINA DE VENDAS */
+
+.button-vendas{
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.label-vendas{
+    background-color:  white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+   
+}
+.buttons-pag{
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: auto;
+    margin: 5px;
+}
+.list-vendas{
+    color: white;
+    
+}
+
+/* ESTILIZAÇÃO DA PÁGINA DE HISTÓRICO DE VENDAS */
+.header-historico{
+    text-align: center;
+    background-color: white;
+    margin: 15px;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+}
+.text-historico{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
