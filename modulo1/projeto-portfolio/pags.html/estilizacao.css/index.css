@@ -62,11 +62,66 @@ div footer{
     right: 2px;
     top: 40px;
 }
-.div-teste{
-font-size: 20px;
-color: white;
-}
 .div-teste1{
 font-size: 20px;
 color: white;
+}
+.me-img{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 24%;
+    border-radius: 180px;
+}
+.texto-sobre-mim{
+    color: white;
+    position: absolute;
+    top: 28%;
+    left: 23%;
+    width: 30%;
+    text-align: justify;
+}
+.texto-sobre-mim h2{
+    position: absolute;
+    top: -30%;
+}
+
+.minhas-hab{
+    color: white;
+    position: absolute;
+    left: 75%;
+    top: 20%;
+    color: white;
+}
+.minhas-hab ul{
+    position: absolute;
+    right: 25%;
+    top: 130%;
+}
+.imag-projeto{
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 60%;
+    left: 23%;
+    border-radius: 15px;
+}
+.paragrafo-projeto{
+    color: white;
+    position: absolute;
+    top: 62%;
+    left: 28%;
+    font-size: 18px;
+    background-color: rgb(62, 2, 65);
+    border-radius: 15px;
+}
+button:hover{
+    color: gray;
+}
+button:active{
+    color: black;
+}
+.div-projeto{
+    background-color: white;
 }

@@ -80,3 +80,20 @@ color: white;
     background-color: white;
     
 }
+.td-descript{
+    text-align: justify;
+}
+.texto-blackjack{
+    color: black;
+}
+.texto-blackjack:hover{
+    color: red;
+   }
+   .img-blackjack{
+   position: absolute;
+   left: 8%;
+   top: 17%;
+   } 
+th{
+    width: 15%;
+}
