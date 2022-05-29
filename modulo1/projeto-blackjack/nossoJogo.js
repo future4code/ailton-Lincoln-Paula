@@ -36,27 +36,27 @@
 
 
 
-//OUTRO MANEIRO QUE EU CONSEGUI, APÓS A PRIMEIRA TENTATIVA
+// OUTRO MANEIRO QUE EU CONSEGUI, APÓS A PRIMEIRA TENTATIVA
 
-//     const carta1Usuario = comprarCarta()
-//     const carta2Usuario = comprarCarta()
-//     const carta1Computador = comprarCarta()
-//     const carta2Computador = comprarCarta()
-//     const somandoCartaUsuario = carta1Usuario.valor + carta2Usuario.valor
-//     const somandoCartaComputador = carta1Computador.valor + carta2Computador.valor
+    const carta1Usuario = comprarCarta()
+    const carta2Usuario = comprarCarta()
+    const carta1Computador = comprarCarta()
+    const carta2Computador = comprarCarta()
+    const somandoCartaUsuario = carta1Usuario.valor + carta2Usuario.valor
+    const somandoCartaComputador = carta1Computador.valor + carta2Computador.valor
 
 
-// if(confirm("Quer iniciar uma nova rodada?")){
-//    console.log("Boas vindas ao jogo de Blackjack!")
-//    console.log(`Usuário - cartas: ${carta1Usuario.texto} ${carta2Usuario.texto}`)
-//    console.log(`Computador - cartas: ${carta1Computador.texto} ${carta2Computador.texto}`)
-//     if(somandoCartaComputador>somandoCartaUsuario){
-//       console.log("Computador Ganhou!")
-//    }else if(somandoCartaUsuario>somandoCartaComputador){
-//       console.log("Usuário Ganhou !")
-//    }else{
-//       console.log("Empate!")
-//    }
+if(confirm("Quer iniciar uma nova rodada?")){
+   console.log("Boas vindas ao jogo de Blackjack!")
+   console.log(`Usuário - cartas: ${carta1Usuario.texto} ${carta2Usuario.texto}`)
+   console.log(`Computador - cartas: ${carta1Computador.texto} ${carta2Computador.texto}`)
+    if(somandoCartaComputador>somandoCartaUsuario){
+      console.log("Computador Ganhou!")
+   }else if(somandoCartaUsuario>somandoCartaComputador){
+      console.log("Usuário Ganhou !")
+   }else{
+      console.log("Empate!")
+   }}
     
    
 

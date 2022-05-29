@@ -5,6 +5,8 @@
 header{
     background-color: rgb(62, 2, 65);
     height: 12vh;
+    position: fixed;
+    width: 100%;
 
 }
 nav{
@@ -14,7 +16,7 @@ nav{
     font-weight: bold;
     position: absolute;
     left: 76%;
-    top: 6%;
+    top: 50%;
     background-color: white;
     border-radius: 14px;
 }
@@ -40,7 +42,7 @@ h1{
 div footer{
     color: white;
     position: absolute;
-    bottom: 0;
+    top: 180%;
     background-color: rgb(62, 2, 65);
     height: 10vh;
     width: 100%;
@@ -63,7 +65,21 @@ div footer{
     right: 2px;
     top: 40px;
 }
-.div-blackjack{
+.div-1etapa{
     color: white;
-    width: 35%;
+    text-align: justify;
 }
+.div-2etapa{
+    color: white;
+    text-align: justify;
+}
+.div-resumo{
+    color: white;
+    text-align: justify
+}
+.imagem1{
+    text-align: center;
+    margin-left: 30%;
+    border-radius: 15px;
+}
+
