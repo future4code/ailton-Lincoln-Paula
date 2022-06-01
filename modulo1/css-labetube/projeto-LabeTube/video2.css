@@ -1,65 +1,69 @@
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+.container{
+    background-color: gray;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 'head head head head'
+                         'main main main main'
+                         'main main main main'
+                         'foot foot foot foot';
 }
 header{
     grid-area: head;
+    height: 10vh;
+}
+main{
+    grid-area: main;
+    height: 80vh;
+    width: 100vw;
+}
+div > p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: bold;
+    font-size: 25px;
+    padding-bottom: 2vh;
+}
+div > p{
+    margin-left: 25%;
+}
+video{
+    margin-left: 25%;
+}
+footer{
+    grid-area: foot;
+    height: 10;
+}
+
+/* TAGS DE ESTILIZAÇÃO */
+
+
+header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: black;
     color: white;
-}
-p{
-    font-size: 50px;
+    font-size: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-input{
-    height: 50px;
-    width: 200px;
-    margin-right: 15px;
-}
-h1{
-grid-area: h1;
-align-self: center;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-margin-left: 14vw;
-
 }
 main{
     display: flex;
- grid-area: main;
- margin-bottom: 10vh;
- align-items: center;
- justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 footer{
-    grid-area: foot;
+    display: flex;
     background-color: black;
     color: white;
-    font-size: 10px;
+    font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-}
-footer p{
-    font-size: 25px;
-    text-align: end;
-    padding-top: 9vh;
-}
-
-.container {
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
-    background-color: gray;
-
-    grid-template-areas: 'head head head head'
-                          'h1 h1 h1 h1'
-                          'main main main main'
-                          'foot foot foot foot';
+    align-items: flex-end;
+    justify-content: right;
 }
