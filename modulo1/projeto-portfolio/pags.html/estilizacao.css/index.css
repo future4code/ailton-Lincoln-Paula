@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0
+}
+.dev-logo{
+ width: 140px;
+ height: 78px;
+ position: absolute;
+ top: 0;
+}
+body{
+ background-color: rgb(0, 0, 0);
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+header{
+    background-color: rgb(62, 2, 65);
+    height: 12vh;
+
+}
+nav{
+    display: inline;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    left: 76%;
+    top: 6%;
+    background-color: white;
+    border-radius: 14px;
+}
+h1{
+    text-align: center;
+    margin: auto;
+    padding-top: 15px;
+    color: white;
+}
+
+ /* ESTILIZAÇÃO DO FOOTER */
+div footer{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(62, 2, 65);
+    height: 10vh;
+    width: 100%;
+}
+.div-das-imagens{
+    position: absolute;
+    right: 45%;
+    bottom: 0%;    
+}
+.texto-contato{
+    position: absolute;
+    left: 10vh;
+    top: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+.texto-contato2{
+    position: absolute;
+    right: 2px;
+    top: 40px;
+}
+.div-teste1{
+font-size: 20px;
+color: white;
+}
+.me-img{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 24%;
+    border-radius: 180px;
+}
+.texto-sobre-mim{
+    color: white;
+    position: absolute;
+    top: 28%;
+    left: 23%;
+    width: 30%;
+    text-align: justify;
+}
+.texto-sobre-mim h2{
+    position: absolute;
+    top: -30%;
+}
+
+.minhas-hab{
+    color: white;
+    position: absolute;
+    left: 75%;
+    top: 20%;
+    color: white;
+}
+.minhas-hab ul{
+    position: absolute;
+    right: 25%;
+    top: 130%;
+}
+.imag-projeto{
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 60%;
+    left: 23%;
+    border-radius: 15px;
+}
+.paragrafo-projeto{
+    color: white;
+    position: absolute;
+    top: 62%;
+    left: 28%;
+    font-size: 18px;
+    background-color: rgb(62, 2, 65);
+    border-radius: 15px;
+}
+button:hover{
+    color: gray;
+}
+button:active{
+    color: black;
+}
+.div-projeto{
+    background-color: white;
+}

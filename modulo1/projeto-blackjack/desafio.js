@@ -34,7 +34,7 @@
    // if(somandoCartaComputador>somandoCartaUsuario){
    //    console.log("Computador Ganhou!")
    // }else if(somandoCartaUsuario>somandoCartaComputador){
-   //    console.log("Usuário Ganhou !")
+   //    console.log("Usuário Ganhou !")}
 
 // const arrayCartaUsuario = []
 // const arrayCartaComputador = []

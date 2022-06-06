@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-color: rgb(62, 2, 65);
+    height: 12vh;
+    position: fixed;
+    width: 100%;
+
+}
+nav{
+    display: inline;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    left: 76%;
+    top: 50%;
+    background-color: white;
+    border-radius: 14px;
+}
+body{
+    background-color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+   }
+.dev-logo{
+    width: 140px;
+    height: 78px;
+    position: absolute;
+    top: 0;
+   }
+h1{
+    text-align: center;
+    margin: auto;
+    padding-top: 15px;
+    color: white;
+}
+
+/* ESTILIZAÇÃO DO FOOTER */
+
+div footer{
+    color: white;
+    position: absolute;
+    top: 180%;
+    background-color: rgb(62, 2, 65);
+    height: 10vh;
+    width: 100%;
+}
+.div-das-imagens{
+    position: absolute;
+    right: 45%;
+    bottom: 0%;    
+}
+.texto-contato{
+    position: absolute;
+    left: 10vh;
+    top: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+.texto-contato2{
+    position: absolute;
+    right: 2px;
+    top: 40px;
+}
+.div-1etapa{
+    color: white;
+    text-align: justify;
+}
+.div-2etapa{
+    color: white;
+    text-align: justify;
+}
+.div-resumo{
+    color: white;
+    text-align: justify
+}
+.imagem1{
+    text-align: center;
+    margin-left: 30%;
+    border-radius: 15px;
+}
+
