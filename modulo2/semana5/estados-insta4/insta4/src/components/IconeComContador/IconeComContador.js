@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
+
 const IconContainer = styled.div`
 	display: flex;
 `
 const IconImage = styled.img`
 	margin-right: 5px;
+	width: 25px;
+	height: 20px;
+	margin-top: 10px;
 `
 
 
