@@ -1,14 +1,14 @@
+
 import React from 'react'
 import styled from 'styled-components'
-
 import {IconeComContador} from '../IconeComContador/IconeComContador'
-
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
-import iconeSalvarPreto from '../../img/Salvar-Pub-White.png'
-import iconeSalvar from '../../img/Salvar-Pub.png'
+// import {iconeSalvarPreto} from '../../img/Salvar-Pub-White.png'
+
+
 
 const PostContainer = styled.div`
   border: 1px solid gray;
@@ -60,7 +60,7 @@ class Post extends React.Component {
     comentando: false,
     numeroComentarios: 0,
     valorComentario: '',
-    curtidoSalvamento: false
+    curtidoSalvamento: false,
   }
 
  //2 e 3 IMPLEMENTAÇÃO
@@ -122,11 +122,11 @@ class Post extends React.Component {
       iconeCurtida = iconeCoracaoBranco
     }
 
-    let iconeSalvar 
+    // let iconeSalvar 
 
-    if(this.state.curtidoSalvamento){
-      iconeSalvar = iconeSalvarPreto
-    }
+    // if(this.state.curtidoSalvamento){
+    //   iconeSalvar = iconeSalvarPreto
+    // }
 
     let componenteComentario
 
@@ -136,13 +136,13 @@ class Post extends React.Component {
 
 
     return <PostContainer>
-      <PostHeader>
-        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario}</p>
-      </PostHeader>
+    <PostHeader>
+      <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
+      <p>{this.props.nomeUsuario}</p>
+    </PostHeader>
 
-      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
-
+    <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
+ 
 
 {/* PASSO 3 
 1ªAPARIÇÃO:
@@ -175,11 +175,11 @@ class Post extends React.Component {
           valorContador={this.state.numeroComentarios}
         />
 
-          <IconeComContador
+          {/* <IconeComContador
           icone={iconeSalvar}
           onClickIcone={this.onClickComentario}
           valorContador={this.state.numeroComentarios}
-        />
+        /> */}
 
       </PostFooter>
       {componenteComentario}
