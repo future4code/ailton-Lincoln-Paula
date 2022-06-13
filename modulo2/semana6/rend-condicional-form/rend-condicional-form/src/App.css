@@ -1,0 +1,21 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: purple;
+  color: white;
+  width: 25vw;
+  position: absolute;
+  left: 20vw;
+  top: 8vh;
+  border-radius: 25px;
+  row-gap: 15px;
+
+}
+.div-contaier{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+
