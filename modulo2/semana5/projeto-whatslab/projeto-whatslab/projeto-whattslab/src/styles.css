@@ -1,0 +1,28 @@
+#emoji{
+    width: 22px;
+    height: 22px;
+    margin-bottom: -1vh;
+
+}
+#emoji:hover{
+    cursor: pointer;
+}
+#labenu-icon{
+    border-radius: 50px;
+    width: 4vw;
+    height: 8vh;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+.div-mensagem{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    
+}
+.div-mensagem2{
+    background-color: lightskyblue;
+    border-radius: 15px;
+}
