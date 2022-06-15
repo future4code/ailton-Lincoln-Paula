@@ -66,23 +66,14 @@ class App extends React.Component {
 
 // DidUptdate => toda vez que ocorrer mudança, colocamos o valor tarefas no local storage
   componentDidUpdate() {
-      // localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas));
+      localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas));
 
   };
 
   componentDidMount() {
-  // const tarefas = localStorage.getItem("tarefas")
-    // if(tarefas){
-    //   const tarefasAdicionadas = localStorage.getItem("tarefas")
-    //   const converteDados = JSON.parse(tarefasAdicionadas)
-    //   this.setState({id: converteDados[0]?.id})
-    //   this.setState({texto: converteDados[0]?.texto})
-    //   this.setState({completa: converteDados[0]?.completa})
-    // }
-
-
-    // const converteDados = JSON.parse(tarefas)
-    // this.setState({tarefas: converteDados})
+  const tarefas = localStorage.getItem("tarefas")
+    const converteDados = JSON.parse(tarefas)
+    this.setState({tarefas: converteDados})
   };
 
 
@@ -175,7 +166,7 @@ class App extends React.Component {
 
         <InputsContainer>
           <label>Filtro</label>
-          <select value={this.state.filter} onChange={this.onChangeFilter}>
+          <select value={this.state.filtro} onChange={this.onChangeFilter}>
             <option value="">Nenhum</option>
             <option value="pendentes">Pendentes</option>
             <option value="completas">Completas</option>
