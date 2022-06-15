@@ -19,14 +19,9 @@ não será aplicada. (pegando da props  completa={tarefa.completa}).
 8- Imagino que essa forma de declaração é por conta do ids, não é apenas a chamada de uma função, mas uma chamada
 de função, que recebe uma propriedade id, específica.*/
 
-
-
-
-
-
-
 import React from 'react'
 import styled from 'styled-components'
+// import { isParenthesizedExpression } from 'typescript'
 import './styles.css'
 
 const TarefaList = styled.ul`
@@ -45,6 +40,16 @@ const InputsContainer = styled.div`
   gap: 10px;
 `
 
+document.addEventListener("keypress", function(e) {
+  if(e.key === 'Enter') {
+  
+      var btn = document.querySelector("#submit");
+    
+    btn.click();
+  
+  }
+});
+
 class App extends React.Component {
     state = {
 
@@ -58,12 +63,26 @@ class App extends React.Component {
       filtro: ''
     }
 
+
+// DidUptdate => toda vez que ocorrer mudança, colocamos o valor tarefas no local storage
   componentDidUpdate() {
-    
+      localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas));
+
   };
 
   componentDidMount() {
+  const tarefas = localStorage.getItem("tarefas")
+    // if(tarefas){
+    //   const tarefasAdicionadas = localStorage.getItem("tarefas")
+    //   const converteDados = JSON.parse(tarefasAdicionadas)
+    //   this.setState({id: converteDados[0]?.id})
+    //   this.setState({texto: converteDados[0]?.texto})
+    //   this.setState({completa: converteDados[0]?.completa})
+    // }
 
+
+    const converteDados = JSON.parse(tarefas)
+    this.setState({tarefas: converteDados})
   };
 
 
@@ -74,6 +93,7 @@ class App extends React.Component {
     console.log(this.setState({inputValue: event.target.value }));
 
   }
+
 
 
 // EVENTO/FUNÇÃO COPIA OBJETO TAREFAS (CHAMADA POR EVENTO ONCLICK),ESPELHA ARRAY ANTIGO, E
@@ -95,6 +115,7 @@ class App extends React.Component {
     this.setState({tarefas: adicionaTarefa}) // adiciona valor atualizado
 
   }
+
 
 
 //Função que mapeia o array de tarefas, recebe uma propriedade id para cada tarefa e a compara com o id do array de
@@ -119,7 +140,7 @@ class App extends React.Component {
   })
 
   this.setState({tarefas: novaListaTarefas})
-
+ 
   }
 
 
@@ -148,7 +169,7 @@ class App extends React.Component {
 
         <InputsContainer>
           <input value={this.state.inputValue} onChange={this.onChangeInput}/>
-          <button onClick={this.criaTarefa}>Adicionar</button> 
+          <button onClick={this.criaTarefa} id='submit'>Adicionar</button> 
         </InputsContainer>
         <br/>
 
@@ -161,11 +182,12 @@ class App extends React.Component {
           </select>
         </InputsContainer>
         <TarefaList>
-          {listaFiltrada.map(tarefa => {
+          {listaFiltrada.map((tarefa, index) => {
             return (
               <Tarefa
                 completa={tarefa.completa}  //Props contendo valor de tarefa.completa e sendo utilizada no styled
                 onClick={() => this.selectTarefa(tarefa.id)} //Props onClick
+                key={index}
               >
                 {tarefa.texto} 
                 <button>Alterar conclusão</button>
