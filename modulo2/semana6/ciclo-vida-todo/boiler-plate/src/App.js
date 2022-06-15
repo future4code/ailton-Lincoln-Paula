@@ -66,12 +66,12 @@ class App extends React.Component {
 
 // DidUptdate => toda vez que ocorrer mudança, colocamos o valor tarefas no local storage
   componentDidUpdate() {
-      localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas));
+      // localStorage.setItem("tarefas", JSON.stringify(this.state.tarefas));
 
   };
 
   componentDidMount() {
-  const tarefas = localStorage.getItem("tarefas")
+  // const tarefas = localStorage.getItem("tarefas")
     // if(tarefas){
     //   const tarefasAdicionadas = localStorage.getItem("tarefas")
     //   const converteDados = JSON.parse(tarefasAdicionadas)
@@ -81,8 +81,8 @@ class App extends React.Component {
     // }
 
 
-    const converteDados = JSON.parse(tarefas)
-    this.setState({tarefas: converteDados})
+    // const converteDados = JSON.parse(tarefas)
+    // this.setState({tarefas: converteDados})
   };
 
 
