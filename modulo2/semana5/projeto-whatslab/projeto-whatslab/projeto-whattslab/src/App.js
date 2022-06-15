@@ -48,7 +48,7 @@ const EstilizaInputUser = styled.input`
 const EstilizaInputTexto = styled.input`
   margin-right: 5px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  width: 20vw;
+  width: 50%;
   border-radius: 10px;
 `;
 
@@ -136,22 +136,24 @@ class App extends React.Component {
 
     return (
       <FundoGeral>
-        <EstilizaFundo>
+        <EstilizaFundo id="fundo-wal">
 
-        <CabecalhoDiv>
+        <CabecalhoDiv id="cabeçalho">
           <img src={labenu} id='labenu-icon'></img>
-          <EstilizaH1>Grupo da Labenu</EstilizaH1>
+          <EstilizaH1 id="texto-grupo">Grupo da Labenu</EstilizaH1>
         </CabecalhoDiv>
           {MensagemImprimiTela}
           <EstilizaH4>{perguntaNome} foi adicionado(a) ao grupo</EstilizaH4>
           <div className="div-input">
-            <EstilizaInputUser
+            <EstilizaInputUser 
+              id="input-user"
               value={this.state.inputUser}
               onChange={this.onChangeInputUser}
               placeholder={"Usuário"}
             ></EstilizaInputUser>
 
             <EstilizaInputTexto
+              id="input-texto"
               value={this.state.inputMensagem}
               onChange={this.onChangeInputMensagem}
               placeholder={"Mensagem"}

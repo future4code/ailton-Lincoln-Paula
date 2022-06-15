@@ -26,3 +26,71 @@
     background-color: lightskyblue;
     border-radius: 15px;
 }
+
+@media screen and (max-width: 990px) {
+    #labenu-icon{
+        width: 5vw;
+    }
+    #texto-grupo{
+        margin-left: 8vw;
+    }
+    #input-user{
+        width: 10vw;
+    }
+    #input-texto{
+        width: 20vw;
+    }
+    #fundo-wal{
+        width:45vw;
+    }
+    #cabeçalho{
+        width: 45vw;
+    }
+  }
+
+  @media screen and (max-width: 752px) {
+    #labenu-icon{
+        width: 6vw;
+        height: 6vh;
+        margin-top: 2vh;
+    }
+    #texto-grupo{
+        margin-left: 10vw;
+    }
+    #input-user{
+        width: 15vw;
+    }
+    #input-texto{
+        width: 25vw;
+    }
+    #fundo-wal{
+        width: 60vw;
+    }
+    #cabeçalho{
+        width: 60vw;
+    }
+  }
+
+
+  @media screen and (max-width: 568px) {
+    #labenu-icon{
+        width: 8vw;
+        height: 6vh;
+        margin-top: 2vh;
+    }
+    #texto-grupo{
+        margin-left: 12vw;
+    }
+    #input-user{
+        width: 20vw;
+    }
+    #input-texto{
+        width: 35vw;
+    }
+    #fundo-wal{
+        width: 80vw;
+    }
+    #cabeçalho{
+        width: 80vw;
+    }
+  }
