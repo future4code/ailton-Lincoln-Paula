@@ -13,41 +13,54 @@ const EstilizaContainer = styled.div`
   }
 `;
 
-const EstilizaHeader = styled.div`
-  width: 100vw;
-  height: 10vh;
-  background-color: black;
-`;
-
 const EstilizaCorpo = styled.div`
   width: 100vw;
-  height: 80vh;
-  background-color: bisque;
+  height: 100vh;
+  background-image: url(https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png);
+  background-size: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 `;
 
-const EstilizaFooter = styled.div`
-  width: 100vw;
-  height: 10vh;
-  background-color: black;
-`;
-
-const EstilizaTitulo = styled.p`
-  width: bold;
-  font-size: 30px;
-  color: white;
-  text-align: center;
-`;
+const EstilizaBox = styled.div`
+  width: 35vw;
+  height: 60vh;
+  background-image: url(https://i.pinimg.com/736x/d8/ae/3f/d8ae3f2cf8ed7a17ea67229187130df1.jpg);
+  background-size: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: 10px 5px 5px black;`
 
 const EstilizaBotao = styled.button`
 
 margin-left: 1vw;
-margin-top: 1.5vh;
+  color: black;
+  box-shadow: 2px 2px 2px black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #99ffdd;
+  font-weight: bold;
+  border-radius: 5px;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 2px white;
+  }`
+
+
+const EstilizaLista = styled.div`
+
+display: flex;
+position: absolute;
+top: 9px;
+left: 5px;
 
 `
+
 
 
 export default class Lista extends Component {
@@ -133,38 +146,32 @@ getAllUsers = async() =>{
     return (
       <EstilizaContainer>
 
-
-        <EstilizaHeader>
-            <EstilizaTitulo>Lista de Usuários !</EstilizaTitulo>
-            < EstilizaBotao onClick={this.props.goCadastro}>Ir para Cadastro</ EstilizaBotao>
-        </EstilizaHeader>
-
-        
         <EstilizaCorpo>
-    
-       {this.state.users.map((users) => {
-          return (
-            <ul key={users.id}><br></br>
-              <li>
-                {users.name}
-                <button
-                  onClick={() => {
-                    this.deleteUser(users.id);
-                  }}
-                >
-                  Deletar Usuário
-                </button>
-              </li>
-            </ul>
-          );
-        })}
+          <EstilizaBox>
+        {this.state.users.map((users) => {
+            return (
+              <ul key={users.id}><br></br>
+                <li>
+                  {users.name}
+                  <EstilizaBotao
+                    onClick={() => {
+                      this.deleteUser(users.id);
+                    }}
+                  >
+                    Deletar Usuário
+                  </EstilizaBotao>
+                </li>
+              </ul>
+            );
+          })}
+
+
+          </EstilizaBox>
+      <EstilizaLista><EstilizaBotao onClick={this.props.goCadastro}>Cadastrar</EstilizaBotao></EstilizaLista> 
+
 
 
         </EstilizaCorpo>
- 
-
-        <EstilizaFooter></EstilizaFooter>
-
 
 
       </EstilizaContainer>
