@@ -42,7 +42,6 @@ const EstilizaMain = styled.div`
   background-color: black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   color: white;
   font-family: monospace;
@@ -54,7 +53,7 @@ const EstilizaMain = styled.div`
 const EstilizaImage = styled.img`
 
   margin-left: 2vw;
-  margin-top: 1vh;
+  margin-bottom: 1.5vh;
 
 `
 
@@ -128,7 +127,19 @@ const EstilizaText = styled.p`
   }
 
 `
+const EstilizaP = styled.p`
 
+margin-top: 2.5vh;
+margin-left: 1vw;
+font-size: 25px;
+font-weight: bold;
+font-family: monospace;
+`
+
+const DivSpot = styled.div`
+
+  display: flex;
+`
 
 export default class Criar extends Component {
   
@@ -261,12 +272,17 @@ dellPlaylist = (id) =>{
       <FundoTotal>
       <GlobalStyle></GlobalStyle>
       <EstilizaHeader>
+        
+         <DivSpot>
       <EstilizaImage src={icon} width='60px' height='60px'></EstilizaImage>
+      <EstilizaP>SpotLin</EstilizaP>
+      </DivSpot>
+     
         <EstilizaBotao onClick={this.props.mudaTelaInicial}>Voltar</EstilizaBotao>
       </EstilizaHeader>
 
       <EstilizaMain>
-
+      <div></div>
       <p>Qual nome da playlist</p>
                 <input value={this.state.inputPlaylist} 
               onChange={this.onChangePlaylist} 

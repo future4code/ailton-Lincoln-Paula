@@ -40,13 +40,12 @@ const EstilizaMain = styled.div`
   background-color: black;
   color: white;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column; 
   
 `
 
 const EstilizaInput = styled.input`
-  
+  width: 18vw;
   
   
 `
@@ -59,7 +58,10 @@ const EstilizaText = styled.p`
   
 `
 const DivInput = styled.div`
-  margin: 5px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 
 `
@@ -87,7 +89,7 @@ const EstilizaBotao = styled.button`
 
   &:hover{
     cursor: pointer;
-    box-shadow: rgb(255, 255, 102) 5px 5px 5px;
+    box-shadow: black 5px 5px 5px;
   }
 `
 
@@ -95,7 +97,42 @@ const EstilizaBotao = styled.button`
 const EstilizaImage = styled.img`
 
   margin-left: 2vw;
-  margin-top: 1vh;
+  margin-bottom: 1.5vh;
+
+`
+
+const EstilizaP = styled.p`
+margin-bottom: 1.5vh;
+margin-left: 1vw;
+font-size: 25px;
+font-weight: bold;
+font-family: monospace;
+`
+
+const DivSpot = styled.div`
+
+  display: flex;
+  align-items: center;
+`
+const EstilizaP2 = styled.p`
+  font-weight: bold;
+font-family: monospace;
+font-size: 15px;
+
+`
+
+const DivRenderiza = styled.div`
+
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 2vh;
+
+`
+
+const EstilizaAudio = styled.audio`
+
+  height: 3vh;
 
 `
 
@@ -190,17 +227,12 @@ addMusic = () =>{
     const renderiza2 = this.state.playlist.map((music) =>{
 
       return (
-        <div key={music.id}>
-          <p>{music.name}</p>
-          <p>{music.artist}</p>
-
-          {/* <audio controls>
-              <audio src={music.url} type={"audio/mp3"}></audio>
-            </audio> */}
-            {/* <embed src={music.url} autostarte="false" loop="true"></embed> */}
-            <audio src={music.url} controls></audio>
+        <DivRenderiza key={music.id}>
+          <EstilizaP2>{music.name}</EstilizaP2>
+          <EstilizaP2>{music.artist}</EstilizaP2>
+            <EstilizaAudio src={music.url} controls></EstilizaAudio>
            
-          </div>
+          </DivRenderiza>
         
       )
       
@@ -212,7 +244,12 @@ addMusic = () =>{
       <FundoTotal>
         < GlobalStyle/>
         <EstilizaHeader>
+
+        <DivSpot>
         <EstilizaImage src={icon} width='60px' height='60px'></EstilizaImage>
+        <EstilizaP>SpotLin</EstilizaP>
+        </DivSpot>
+
           <EstilizaBotao onClick={this.props.renderizaPag}>Voltar</EstilizaBotao>
         </EstilizaHeader>
 
