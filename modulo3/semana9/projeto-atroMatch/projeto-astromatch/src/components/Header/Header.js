@@ -23,14 +23,18 @@ const DivContainer = styled.div`
 
 // `
 
-function Header() {
+function Header(props) {
     
   return (
 
     <DivContainer>
-    <h2>astroMatch</h2>
+      {/* {console.log(props)} */}
+      <div>
+        <h2>astroMatch</h2>
+    <button onClick={() => props.setaTela('matches')}>Seus matches</button> 
+      </div>
+   
     <hr></hr>
-
     </DivContainer>
 
   )
