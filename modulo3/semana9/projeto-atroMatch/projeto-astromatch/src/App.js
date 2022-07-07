@@ -13,37 +13,18 @@ const trocarTela = () =>{
 
 switch (tela) {
   case 'home':
-    return <Home setaTela={setaTela}></Home>
+    return <Home setTela={setTela}></Home>
     break;
 
   case 'matches':
-  return <Matches setaTela={setaTela}></Matches>
+  return <Matches></Matches>
   break;
     
-  default:
-    return <Home></Home>
-    break;
 }
 
 }
 
 
-let setaTela = (id) =>{
-
-  console.log('oi', id)
-
-  setTela(id)
-}
-
-
-switch (tela) {
-  case 'home':
-      return <Home/>
-    break;
-
-  default:
-    break;
-}
 
 
   return (

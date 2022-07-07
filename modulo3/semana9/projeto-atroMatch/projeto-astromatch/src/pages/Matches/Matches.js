@@ -77,21 +77,9 @@ useEffect(() =>{
 
 
     <DivContainer>
-      <DivCard>
-        <Header></Header>
-        <Main>
-
-          {/* {matches.map((match)=>{
-
-          return (
-            <p>{match}</p>
-          )
-
-        })} */}
-
-        </Main>
-        </DivCard>
-        </DivContainer>
+      
+        oi
+    </DivContainer>
 
   )
   

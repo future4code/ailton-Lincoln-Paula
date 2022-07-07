@@ -66,7 +66,7 @@ function Home(props) {
 
    let getChoosePerson = () =>{
 
-    console.log('deu match')
+    // console.log('deu match')
     const url = `${BASE_URL}/choose-person`
 
     const body = {
@@ -79,6 +79,19 @@ function Home(props) {
     .then((res)=>{
 
       // console.log(res)
+
+      if(res.data.isMatch === true){
+
+        return alert`Deu Match !`
+
+      }
+
+      if (res.data.profile){ //aqui vai checar se existe o perfil na resposta
+        setPerfil(res.data.profile) // se o perfil existir, ele vai setar
+     } else {
+        alert('acabaram os perfis disponíveis') // se o perfil não existir, ele ignora e dispara um alert pra avisar o usuário
+     }
+
       
 
     }).catch((err)=>{
@@ -90,13 +103,12 @@ function Home(props) {
    } 
 
 
-
   return (
 
 
     <DivContainer>
     <GlobalStyle/>
-    {/* {console.log(props)} */}
+    {/* {console.log(props)}   */}
         <DivCard>
 
             <Header setaTela={props.setaTela}>
@@ -106,8 +118,8 @@ function Home(props) {
             <Main profile={profile}
              getChoosePerson={getChoosePerson}
              getProfilleChoose={getProfilleChoose}/>
-{/* 
-        <button onClick={() =>props.setTela('matches')}>funcional</button> */}
+
+        <button onClick={() => props.setTela('matches')}>funcional</button> 
 
         </DivCard>
 
