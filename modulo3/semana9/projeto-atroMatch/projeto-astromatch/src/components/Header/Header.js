@@ -1,44 +1,63 @@
-import React from 'react'
-import styled from 'styled-components'
-
-
+import React from "react";
+import styled from "styled-components";
+import { ChakraProvider } from '@chakra-ui/react'
+import { Button, ButtonGroup, Stack, Icon } from '@chakra-ui/react'
+import { GiLovers } from 'react-icons/gi';
 
 const DivContainer = styled.div`
+  height: 10%;
+  background-color: bisque;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  font-family: 'Courier New', Courier, monospace;
+  border: solid black 1px;
+`;
 
-    height: 10%;
-    background-color: bisque;
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+const Principal = styled.div`
+
+display: flex;
+justify-content: space-between;
+margin-left: 5px ;
+margin-right: 5px;
+padding-top: 12px;
+align-items: center;
+
+`
+
+const Text =  styled.h2`
+
+font-weight: bold;
+font-size: 25px;
+
 
 `
 
 
-// const Text = styled.h2`
-
-// margin: 0;
-// paddin
-
-// `
-
 function Header(props) {
-    
   return (
+    <ChakraProvider>
 
     <DivContainer>
-      {/* {console.log(props)} */}
-      <div>
-        <h2>astroMatch</h2>
-    <button onClick={() => props.setaTela('matches')}>Seus matches</button> 
-      </div>
-   
-    <hr></hr>
+      <Principal>
+        <Text>astroMatch♥</Text>
+        <Button
+        leftIcon={<Icon as={GiLovers}></Icon>}
+        colorScheme={'pink'}
+        onClick={() => props.setaTela("matches")}
+        width={28}
+        height={8}>Matches
+        </Button>
+
+      </Principal>
+
+  
     </DivContainer>
 
-  )
-
+    </ChakraProvider>
+  );
 }
 
-export default Header
+export default Header;
