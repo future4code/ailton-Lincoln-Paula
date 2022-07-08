@@ -14,6 +14,7 @@ const DivContainer = styled.div`
   }
   font-family: 'Courier New', Courier, monospace;
   border: solid black 1px;
+  margin-top: 2vh;
 `;
 
 const Principal = styled.div`
@@ -47,8 +48,9 @@ function Header(props) {
         leftIcon={<Icon as={GiLovers}></Icon>}
         colorScheme={'pink'}
         onClick={() => props.setaTela("matches")}
-        width={28}
-        height={8}>Matches
+        width={8}
+        paddingRight={2}
+        height={8}>
         </Button>
 
       </Principal>

@@ -24,7 +24,7 @@ const DivContainer = styled.div`
 `;
 
 const DivCard = styled.div`
-  background-color: white;
+    background-color: #ffb3b3;
   height: 100vh;
   width: 35vw;
 `;

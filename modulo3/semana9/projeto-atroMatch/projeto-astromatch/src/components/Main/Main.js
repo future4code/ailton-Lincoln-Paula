@@ -8,8 +8,8 @@ import { SiVerizon } from 'react-icons/si';
 
 
 const DivContainer = styled.div`
-  height: 90%;
-  background-color: royalblue;
+  height: 85%;
+  width: 100%;
   * {
     margin: 0;
     padding: 0;
@@ -20,27 +20,52 @@ const DivContainer = styled.div`
   align-items: center;
   font-family: 'Courier New', Courier, monospace;
   border: solid black 1px;
+  box-shadow: black 15px 15px 15px; 
+  background-color: white;
 `;
 
 const DivCard = styled.div`
-
-height: 90%;
 background-image: url(${(props) => props.photo});
-background-size: cover;
+width: 75%;
+height: 85%;
+margin-top: 1vh;
 background-repeat: no-repeat;
+background-position: center;
+box-shadow: black 15px 15px 15px; 
+background-size: cover;
 
 
 `
 const Info = styled.div`
 
-background-color: white;
-box-shadow: black 15px 15px 15px;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 padding: 5px;
-margin-top: 67vh;
+color: white;
+margin-top: 50vh;
+background-color: #ffb3b3;
+height: 15vh;
+`
+
+const Espacamento = styled.div`
+
+  display: flex;
+  column-gap: 2vw;
+
+`
+const Botoes = styled.div`
+display: flex;
+justify-content: center;
+background-color: #ffb3b3;
+
+`
+
+const DivTeste = styled.div`
+
+background-color: #ffb3b3;
+opacity: 0.9;
 `
 
 function Main(props) {
@@ -49,25 +74,28 @@ function Main(props) {
 <ChakraProvider>
 
     <DivContainer>
-
-
       {props.profile ? (
         <DivCard  photo={props.profile.photo}>  
+      <DivTeste>
 
       <Info>
       <div>
+        <Espacamento>
 
-      <p>{props.profile.name}</p>
-      <p>
-        <b>Idade: </b>
+      <span>
+        <b>{props.profile.name}</b>
+        </span>
+      <span>
         {props.profile.age}
-      </p>
+      </span>
+        </Espacamento>
       <p>
-        <b>Descrição:</b>
         {props.profile.bio}
       </p>
       </div>
-      <div>
+        
+      </Info>
+      <Botoes>
         <Button 
          colorScheme={'red'}
          rightIcon={<Icon as={AiFillCloseCircle} w={5} h={5} />}
@@ -81,9 +109,8 @@ function Main(props) {
          rightIcon={<Icon as={SiVerizon} w={4} h={5} />}
          marginLeft={2}
          >Like</Button>
-      </div>
-        
-      </Info>
+      </Botoes>
+      </DivTeste>
       </DivCard>
       ): (
         <p>carregando</p>
