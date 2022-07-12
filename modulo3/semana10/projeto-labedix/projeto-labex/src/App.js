@@ -1,17 +1,16 @@
 import React from 'react'
-import styled from 'styled-components';
+import {Router} from './routes/Router'
 
-
-const Text = styled.p`
-
-font-family: 'Roboto', sans-serif;
-
-`
 
 function App() {
+
+
   return (
-    <div>oi
+
+    <div>
+      <Router></Router>
     </div>
+    
   )
 }
 
