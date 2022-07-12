@@ -1,8 +1,9 @@
 import React from 'react'
-import {DivContainer, GlobalStyle, CardPrincipal, Text, Header} from './../style/HomePageStyle'
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import {DivContainer, GlobalStyle, CardPrincipal, Text, Header, TextHeader} from './../style/HomePageStyle'
+import { ChakraProvider } from '@chakra-ui/react'
+import { Button, ButtonGroup, Stack, Icon } from '@chakra-ui/react'
 import {useNavigate} from 'react-router-dom'
-import {goToAdminLogin, goToListTripsPage, goBack} from '../routes/coordinator'
+import {goToPage} from '../routes/coordinator'
 
 
 function HomePage() {
@@ -14,20 +15,27 @@ function HomePage() {
   return (
 
 
+    <ChakraProvider>
 
     <DivContainer>
       <GlobalStyle/>
       
       <Header>
-        <h2 onClick={() =>goBack(Navigate)}>LabeX</h2>
+        <TextHeader>LabeX</TextHeader>
       </Header>
       <CardPrincipal>
-      <Button onClick={() =>goToListTripsPage(Navigate)}>Viagem ! 🌎</Button>
+      <Button 
+      colorScheme={'blue'}
+      w={150}
+      h={12}
+      onClick={() =>goToPage(Navigate, 'trips/list')}>Viagem ! 🌎</Button>
 
       </CardPrincipal>
       
-      <Text onClick={() =>goToAdminLogin(Navigate)}>🔒Admin area</Text>
+      <Text onClick={() =>goToPage(Navigate, 'login')}>🔒Admin area</Text>
       </DivContainer>
+
+    </ChakraProvider>
   )
 }
 

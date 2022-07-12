@@ -3,11 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 import background from '../assets/images/background.webp';
 import Roboto  from '../assets/fonts/Roboto/Roboto-Regular.ttf'
 
-// Fonte: Roboto
-// Títutos: 24px, Subtítulos: 20px, Corpo Texto: 16px (variável)
-// Cor primária: #001F37
-// Cor secundária: 3F0071
-// Cor destaque: #610094
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -16,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: Roboto;
     @font-face {
-      font-family: 'Roboto' ;
+      font-family: 'Roboto';
       src: url(${Roboto});
     }
 
@@ -25,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const DivContainer = styled.div`
 
-    width: 100;
+    width: 100vw;
     height: 100vh;
     background-image: url(${background});
     background-repeat: no-repeat;
@@ -33,15 +28,20 @@ export const DivContainer = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
     font-family: Roboto;
 `;
 
+
 export const Header = styled.div`
-width: 100%;
 height: 12vh;
-display: flex;
 color: white;
+
+`
+
+export const DivBotoes = styled.div`
+
+margin-left: 26vw;
+
 
 `
 
@@ -52,32 +52,32 @@ export const TextHeader = styled.h2`
   }
   margin-left: 3vw;
   font-size: 30px;
-  margin-top: 25px;
+  margin-top: 4px;
   font-weight: bold;
   display: flex;
 `
+// Cor primária: #001F37
+// Cor secundária: 3F0071
+// Cor destaque: #610094
 
-export const CardPrincipal = styled.div`
+export const DivBackground = styled.div`
 
-height: 90vh;
+width: 85vw;
+background-color: #3F0071;
+opacity: 0.9;
+height: 100%;
+box-shadow: 15px 15px 15px black;
+border: black solid ;
+`
+
+export const DivContainerBackground = styled.div`
+
 display: flex;
 justify-content: center;
-align-items: center;
 
 `
 
-export const Text = styled.p`
-
-color: white;
-font-weight: bold;
-position: absolute;
-bottom: 0;
-left: 90%;
-
-&:hover{
-
-    cursor: pointer
-    
-}
+export const DivPrincipal = styled.div`
+height: 80vh;
 
 `

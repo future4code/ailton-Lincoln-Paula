@@ -11,15 +11,16 @@ import ErrorPage from './../pages/Admin/ErrorPage.js'
 export const Router = () =>{
 
 return(
+    
     <BrowserRouter>
     <Routes>
-    <Route index element={<Home/>}/>
-    <Route path='user-captation' element={<ListTripsPage/>}/>
-    <Route path='user-trip-detail' element={<TripDetailsPage/>}/>
-    <Route path='admin-login' element={<LoginPage/>}/>
-    <Route path='admin-area' element={<AdminHomePage/>}/>
-    <Route path='admin-create' element={<CreateTripPage/>}/>
-    <Route path='admin-trip-detail' element={<AdminDetailTrip/>}/>
+    <Route index  path ='/home' element={<Home/>}/>
+    <Route path='/trips/list' element={<ListTripsPage/>}/>
+    <Route path='/trips/application' element={<TripDetailsPage/>}/>
+    <Route path='/login' element={<LoginPage/>}/>
+    <Route path='/admin/trips/list' element={<AdminHomePage/>}/>
+    <Route path='/admin/trips/create' element={<CreateTripPage/>}/>
+    <Route path='/admin/trips/:id' element={<AdminDetailTrip/>}/>
     <Route path='*' element={<ErrorPage/>}/>
     </Routes>
     </BrowserRouter>

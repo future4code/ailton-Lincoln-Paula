@@ -30,21 +30,36 @@ background-image: url(${background});
 
 `
 
-export const Main = styled.div`
+export const DivCentralizaMain = styled.div`
 
-height: 100vh;
-width: 100vw;
 display: flex;
 justify-content: center;
-align-items: center;
-display: flex;
-flex-direction: column;
+height: 100vh;
 `
 
-export const ErrorMessage = styled.p`
+export const Main = styled.div`
 
-font-weight: bold;
-font-size: 40px;
-color: white;
+width: 85vw;
+background-color: #3F0071;
+opacity: 0.9;
+height: 100%;
+box-shadow: 15px 15px 15px black;
+border: black solid ;
+display: flex;
+justify-content: center;
+`
+
+export const DivLogin = styled.div`
+
+background-color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 30vh;
+margin-top: 35vh;
+border-radius: 25px;
+box-shadow: black 15px 15px 15px ;
+padding: 50px;
 
 `
