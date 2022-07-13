@@ -7,6 +7,18 @@ import {useRequestDataPost} from '../../constants/Hook/useRequestData'
 import {BASE_URL} from '../../constants/Url/url'
 import {useNavigate} from 'react-router-dom'
 import {goToPage} from './../../routes/coordinator'
+import { TextHeader, Header} from './../../style/LoginPageStyle'
+
+
+document.addEventListener("keypress", function(e) {
+    if(e.key === 'Enter') {
+    
+        var btn = document.querySelector("#submit");
+      
+      btn.click();
+    
+    }
+  });
 
 function LoginPage() {
 
@@ -14,6 +26,8 @@ function LoginPage() {
   const [pass, setPass] = useState(''); 
   const Navigate = useNavigate()
   
+
+
 useEffect(()=>{
 
 if(localStorage.getItem('token') === null){
@@ -55,10 +69,16 @@ useRequestDataPost(`${BASE_URL}/login`, body, Navigate);
 
   return (
     <ChakraProvider>
-      {/* {console.log(localStorage.getItem('token'))} */}
+
+      <GlobalStyle></GlobalStyle>
     <DivContainer>
 
-      <GlobalStyle/>
+      <Header>
+        <TextHeader onClick={() => goToPage(Navigate, 'home')}>
+        LabeX
+        </TextHeader>
+        </Header>
+
 
       <DivCentralizaMain>
 
@@ -84,9 +104,11 @@ useRequestDataPost(`${BASE_URL}/login`, body, Navigate);
 
       <Button
       onClick={SubmitLoginAndPass}
+      id='submit'
+      type='submit'
       bg='white'
       color='black'
-      h='sz'
+      padding={'20px'}
       w='sz'>admin home</Button>
 
 
