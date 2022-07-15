@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import { goToPage } from '../../routes/coordinator'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -10,37 +10,65 @@ from '../../style/AdminHomePageStyle'
 import { BASE_URL } from '../../constants/Url/url'
 import {useRequestDataGet} from './../../constants/Hook/useRequestData' 
 import {Deslogar} from './../../constants/Functions/Logout'
+import axios from 'axios'
 
 
 function AdminHomePage() {
 
-  
-  
+  const [data] = useRequestDataGet(`${BASE_URL}/trips`);
   const Navigate = useNavigate()
-  
+
   useEffect(()=>{
     
     if(localStorage.getItem('token') === null){
-      
       goToPage(Navigate, 'login')
       
     }
   },[])
-
-    const [data] = useRequestDataGet(`${BASE_URL}/trips`);
   
-    
-    const Viagens = data.map((viagens) => {
-      return <CardTrip key={viagens.id}
-      onClick={() =>goToPage(Navigate, `admin/trips/${viagens.id}`)}>
-        {viagens.name}
+
+  const renderizaTrip =() =>{
+      
+  return  data.map((viagens) => {
+
+      return <CardTrip key={viagens.id}>
+        <p onClick={() =>goToPage(Navigate, `admin/trips/${viagens.id}`)}>{viagens.name}</p>
         <DeleteIcon
         marginRight={5}
-        marginTop={1}/>
-        </CardTrip>;
+        marginTop={1}
+        onClick={() => delThisTrip(viagens.id)}/>
 
+        </CardTrip>
 });
 
+
+  }
+
+
+ const delThisTrip = (id) =>{
+
+  const token = localStorage.getItem('token')
+
+  axios.delete(`${BASE_URL}/trips/${id}`, {
+    headers:{
+      auth: token
+    }
+  })
+  
+  
+  .then((res)=>{  
+    console.log(res)
+    alert(`deu certo !`)
+    renderizaTrip()
+
+  }).catch((err)=>{
+
+    console.log(err)
+    console.log('deu ruim!')
+
+  })
+
+ }
 
   return (
 
@@ -49,7 +77,6 @@ function AdminHomePage() {
     <DivContainer>
       <GlobalStyle>
         </GlobalStyle>
-
         <Header>
         <TextHeader onClick={() => goToPage(Navigate, 'home')}>
         LabeX
@@ -87,7 +114,7 @@ function AdminHomePage() {
           
         </DivHeaderBackgroundButton>
           </DivHeaderBackground>
-      {Viagens}
+      {renderizaTrip()}
         </DivBackground>
 
       </Main>

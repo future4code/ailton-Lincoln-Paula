@@ -16,8 +16,11 @@ function ListTripsPage() {
   const Navigate = useNavigate()
   const [data] = useRequestDataGet(`${BASE_URL}/trips`);
 
+
+  
+
   const Viagens = data.map((viagens) => {
-    return <Card>
+    return <Card key={viagens.id}>
       <p><b>{viagens.name}</b></p>
       <p><b>Planeta:</b>{viagens.planet}</p>
       <p><b>Descrição:</b>{viagens.description}</p>
@@ -79,7 +82,7 @@ function ListTripsPage() {
 <Button colorScheme={'purple'}
 onClick={() => goToPage(Navigate, 'trips/application')}>Submeter</Button>
 </DivButtonCard>
-      {/* {console.log(data)} */}
+
       </DivPrincipal>
 
         </DivBackground> 

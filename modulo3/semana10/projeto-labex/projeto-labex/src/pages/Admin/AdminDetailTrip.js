@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import {useNavigate} from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import {useNavigate, useParams} from 'react-router-dom'
 import { goToPage } from '../../routes/coordinator'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Button, ButtonGroup, Stack, Icon} from '@chakra-ui/react'
@@ -15,6 +15,10 @@ import axios from 'axios'
 function AdminDetailTrip(props) {
 
  const Navigate = useNavigate() 
+ const params = useParams()
+ const [tripDetail, setTripDetail] = useState([])
+ const [candidate, setCandidate] = useState([])
+ const [approved, setApproved] = useState([])
 
   useEffect(() =>{
     if(localStorage.getItem('token') === null){
@@ -23,26 +27,40 @@ function AdminDetailTrip(props) {
         
         }
     const token = localStorage.getItem('token')
-    axios.get(`${BASE_URL}/trip/:id`,{
+    axios.get(`${BASE_URL}/trip/${params.id}`,{
       headers:{
         auth: token
       }
     })
     .then((res) =>{
+      console.log(res.data)
+      setTripDetail(res.data.trip)
+      setCandidate(res.data.trip.candidate)
+      setApproved(res.data.trip.approved)
+
     })
     .catch((err)=>{
+
+      alert(err)
+
     })
   },[])
+
+
+  // const detalhesViagem = tripDetail.map((detail)=>{
+
+  //   return <p></p>
+
+  // })
 
 
   return (
 
     <ChakraProvider>
-
+      {/* {console.log(tripDetail)} */}
     <DivContainer>
       <GlobalStyle>
         </GlobalStyle>
-
         <Header>
         <TextHeader onClick={() => goToPage(Navigate, 'home')}>
         LabeX
@@ -74,6 +92,7 @@ function AdminDetailTrip(props) {
       <DivHeaderBackgroundYellow>
 
         <Button
+        
 
 colorScheme={'purple'}
 marginBlock={6}
@@ -84,8 +103,6 @@ onClick={() => goToPage(Navigate, 'admin/trips/list')}
 >
   Voltar</Button>
       </DivHeaderBackgroundYellow>
-
-
 
           <Button
           onClick={() => goToPage(Navigate, 'admin/trips/create')}
@@ -98,7 +115,19 @@ onClick={() => goToPage(Navigate, 'admin/trips/list')}
           </DivHeaderBackground>
 
 
-      <div>AQUI VAI OS DETALHES</div>
+      <div>
+        {/* <h1>Viagem</h1>
+        <p>Nome:{tripDetail.trip.name}</p>
+        <p>Descrição:{tripDetail.trip.description}</p>
+        <p>Planeta:{tripDetail.trip.planet}</p>
+        <p>Duração:{tripDetail.trip.durationInDays} dias</p>
+        <p>Data:{tripDetail.trip.date}</p> */}
+      </div>
+
+      <div>
+      <h1>Candidatos</h1>
+      {/* <p>Candidato: {tripDetail.trip.candidates.name}</p> */}
+      </div>
       
         </DivBackground>
 

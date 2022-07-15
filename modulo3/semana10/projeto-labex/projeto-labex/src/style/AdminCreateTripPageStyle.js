@@ -91,37 +91,10 @@ margin-top: 5px;
 margin-left: -35px;
 `
 
-export const CardTrip = styled.div`
-
-
-height: 5vh;
-width: 25vw;
-background-color: white;
-margin: 8px;
-margin-left: -50px;
-margin-top: 12px;
-display: flex;
-box-shadow: 8px 8px 8px black;
-border-radius: 5px;
-font-weight: bold;
-display: flex;
-justify-content: space-between;
-
-&:hover{
-  background-color: red;
-}
-`
-
 export const DivHeaderBackground = styled.div`
 
 display: flex;
 
-`
-
-export const DivHeaderBackgroundButton = styled.div`
-
-position: absolute;
-right: 120px;
 `
 
 export const DivHeaderBackgroundYellow = styled.div`
@@ -129,4 +102,12 @@ export const DivHeaderBackgroundYellow = styled.div`
 position: absolute;
 left: 10vw;
 margin-top: -12px;
+`
+export const DivForm = styled.div`
+
+display: flex;
+flex-direction: column;
+background-color: yellow;
+height: 100%;
+
 `

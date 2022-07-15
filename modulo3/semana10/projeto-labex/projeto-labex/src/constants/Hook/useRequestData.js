@@ -1,18 +1,17 @@
 import axios from "axios";
 import { useEffect, useState} from "react";
 import {goToPage} from './../../routes/coordinator'
-import {useNavigate} from 'react-router-dom'
 
 
 
-export const useRequestDataGet = (url, requisitionType) => {
+
+export const useRequestDataGet = (url) => {
 
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
   
     useEffect(() => {
-      // console.log(requisitionType)
       setIsLoading(true);
       axios.
         get(url)
@@ -35,10 +34,7 @@ export const useRequestDataGet = (url, requisitionType) => {
 
   
   export const useRequestDataPost = (url, body, Navigate) => {
-      
-    console.log('oi')
-
-    
+       
       axios.post(url, body)
       .then((res) =>{
         console.log(res)
