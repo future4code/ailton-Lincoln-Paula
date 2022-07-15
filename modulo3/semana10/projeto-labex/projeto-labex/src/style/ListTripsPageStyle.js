@@ -20,8 +20,8 @@ export const GlobalStyle = createGlobalStyle`
 
 export const DivContainer = styled.div`
 
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-image: url(${background});
     background-repeat: no-repeat;
     background-size: cover;
@@ -62,7 +62,7 @@ export const TextHeader = styled.h2`
 
 export const DivBackground = styled.div`
 
-width: 85vw;
+width: 85%;
 background-color: #3F0071;
 opacity: 0.9;
 height: 100%;
@@ -74,10 +74,63 @@ export const DivContainerBackground = styled.div`
 
 display: flex;
 justify-content: center;
-
+height: 100%;
 `
 
 export const DivPrincipal = styled.div`
-height: 80vh;
+height: 80%;
+display: flex;
+gap: 12px;
+flex-wrap: wrap;
+`
+
+
+export const Card = styled.div`
+margin: 20px;
+border-radius: 15px;
+height: 40vh;
+width: 30vw;
+background-color: white;
+box-shadow: 15px 15px 15px black;
+display: flex;
+flex-direction: column;
+gap: 12px;
+padding-left: 5px;
+`
+
+export const DivH1 = styled.div`
+
+margin-left: 32vw;
+`
+
+export const H1 = styled.div`
+
+color: white;
+font-weight: bold;
+font-size: 20px;
+`
+
+export const DivCard = styled.div`
+
+display: flex;
+flex-wrap: wrap;
+gap: 16px;
+
+`
+
+export const DivText = styled.div`
+
+background-color: white;
+margin: 5px;
+
+
+`
+
+export const DivButtonCard = styled.div`
+
+
+margin-top: 5px;
+margin-left: 35vw;
+padding: 20px;
 
 `

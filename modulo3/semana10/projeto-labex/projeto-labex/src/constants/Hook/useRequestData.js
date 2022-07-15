@@ -4,7 +4,6 @@ import {goToPage} from './../../routes/coordinator'
 import {useNavigate} from 'react-router-dom'
 
 
-// export const Navigate = useNavigate()
 
 export const useRequestDataGet = (url, requisitionType) => {
 

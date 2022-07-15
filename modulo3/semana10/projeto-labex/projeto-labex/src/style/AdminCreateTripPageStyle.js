@@ -123,3 +123,10 @@ export const DivHeaderBackgroundButton = styled.div`
 position: absolute;
 right: 120px;
 `
+
+export const DivHeaderBackgroundYellow = styled.div`
+
+position: absolute;
+left: 10vw;
+margin-top: -12px;
+`

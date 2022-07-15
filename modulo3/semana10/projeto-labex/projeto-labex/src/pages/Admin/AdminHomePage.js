@@ -3,12 +3,13 @@ import {useNavigate} from 'react-router-dom'
 import { goToPage } from '../../routes/coordinator'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Button, ButtonGroup, Stack, Icon} from '@chakra-ui/react'
-import {DeleteIcon} from '@chakra-ui/icons'
-import {GlobalStyle, DivContainer, Main, Header, TextHeader, DivBotoes, CardTrip, DivBackground, Text } 
+import {DeleteIcon, CheckIcon, CloseIcon, } from '@chakra-ui/icons'
+import {GlobalStyle, DivContainer, Main, Header, TextHeader, DivBotoes, CardTrip, DivBackground, Text,
+  DivHeaderBackground, DivHeaderBackgroundButton } 
 from '../../style/AdminHomePageStyle'
 import { BASE_URL } from '../../constants/Url/url'
 import {useRequestDataGet} from './../../constants/Hook/useRequestData' 
-
+import {Deslogar} from './../../constants/Functions/Logout'
 
 
 function AdminHomePage() {
@@ -28,15 +29,17 @@ function AdminHomePage() {
 
     const [data] = useRequestDataGet(`${BASE_URL}/trips`);
   
+    
     const Viagens = data.map((viagens) => {
-      return <CardTrip key={viagens.id}>
+      return <CardTrip key={viagens.id}
+      onClick={() =>goToPage(Navigate, `admin/trips/${viagens.id}`)}>
         {viagens.name}
         <DeleteIcon
         marginRight={5}
         marginTop={1}/>
         </CardTrip>;
-    });
 
+});
 
 
   return (
@@ -53,9 +56,6 @@ function AdminHomePage() {
           <DivBotoes>
 
           <Stack direction='row' marginLeft={'120px'} spacing={4} align='center'>
-            <Button colorScheme='green' variant='solid' onClick={() => goToPage(Navigate, 'admin/trips/create')}>
-             Criar Viagem
-            </Button>
           </Stack>
 
           </DivBotoes>
@@ -65,14 +65,28 @@ function AdminHomePage() {
         <Button
         colorScheme={'red'}
         marginBlock={6}
-        marginRight={2}   
+        marginRight={2}
+        onClick={() => Deslogar(Navigate)}   
+        rightIcon={<CloseIcon></CloseIcon>}
         >
           Logout</Button>
 
         </Header>
       <Main>
         <DivBackground>
-      <Text>Viagens Agendadas!</Text>
+          <DivHeaderBackground>
+      <Text>Viagens Agendadas!
+      </Text>
+        <DivHeaderBackgroundButton>
+          <Button
+          onClick={() => goToPage(Navigate, 'admin/trips/create')}
+          marginBlock={4}
+          colorScheme={'green'}
+          rightIcon={<CheckIcon/>}
+          >Criar Viagem</Button>
+          
+        </DivHeaderBackgroundButton>
+          </DivHeaderBackground>
       {Viagens}
         </DivBackground>
 
