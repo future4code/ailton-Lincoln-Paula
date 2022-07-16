@@ -107,7 +107,36 @@ export const DivForm = styled.div`
 
 display: flex;
 flex-direction: column;
-background-color: yellow;
 height: 100%;
 
+`
+
+export const Form = styled.form`
+
+display: flex;
+flex-direction: column;
+margin: 5px;
+gap: 10px;
+margin-top: 15vh;
+width: 25vw;
+`
+
+
+export const ButtonS = styled.button`
+
+
+background-color: white;
+color: black;
+font-weight: bold;
+width: 10vw;
+height: 8vh;
+margin-left: 8vw;
+border-radius: 15px;
+box-shadow: 15px 15px 15px black;
+
+&:hover{
+
+  box-shadow: 15px 15px 15px lightskyblue;
+
+}
 `

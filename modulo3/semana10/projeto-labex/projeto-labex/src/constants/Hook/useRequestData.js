@@ -37,13 +37,10 @@ export const useRequestDataGet = (url) => {
        
       axios.post(url, body)
       .then((res) =>{
-        console.log(res)
         localStorage.setItem('token', res.data.token)
         goToPage(Navigate, 'admin/trips/list')
       })
       .catch((err)=>{
-  
-        console.log(err.message)
         alert(`Não foi possível logar !`)
   
       })

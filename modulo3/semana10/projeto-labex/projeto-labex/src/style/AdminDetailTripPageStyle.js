@@ -18,11 +18,10 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Header = styled.div`
-width: 100%;
+width: 100vw;
 height: 12vh;
 display: flex;
 color: white;
-justify-content: space-between;
 `
 
 export const DivBotoes = styled.div`
@@ -46,7 +45,7 @@ export const TextHeader = styled.h2`
 
 export const DivContainer = styled.div`
 
-height: 100vh;
+height: 100%;
 width: 100vw;
 font-family: Roboto;
 background-image: url(${background});
@@ -58,7 +57,7 @@ background-image: url(${background});
 
 export const Main = styled.div`
 
-height: 88vh;
+height: 88%;
 width: 100vw;
 display: flex;
 justify-content: center;
@@ -129,4 +128,110 @@ export const DivHeaderBackgroundYellow = styled.div`
 position: absolute;
 right: 72vw;
 margin-top: -12px;
+`
+
+export const Card = styled.div`
+margin: 20px;
+border-radius: 15px;
+height: 40vh;
+width: 30vw;
+background-color: white;
+box-shadow: 15px 15px 15px black;
+display: flex;
+flex-direction: column;
+gap: 12px;
+padding-left: 5px;
+&:hover{
+
+box-shadow: 15px 15px 15px lightskyblue;
+
+}
+`
+
+export const TextCard = styled.h1`
+
+text-align: center;
+font-weight: bold;
+font-size: 24px;
+
+`
+
+export const TextCandidate = styled.h1`
+
+text-align: center;
+font-weight: bold;
+font-size: 24px;
+color: white;
+margin-top: 12px;
+`
+
+export const CardCandidatos = styled.div`
+margin: 20px;
+border-radius: 15px;
+height: 40vh;
+width: 30vw;
+background-color: bisque;
+box-shadow: 15px 15px 15px black;
+display: flex;
+flex-direction: column;
+gap: 12px;
+padding-left: 5px;
+&:hover{
+
+box-shadow: 15px 15px 15px lightskyblue;
+
+}
+`
+export const CandidateBack = styled.section`
+
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+`
+
+export const CandidateApproved = styled.div`
+
+display: flex;
+flex-direction: column;
+
+`
+
+export const TextCase = styled.p`
+
+color: red;
+font-size: 18px;
+font-weight: bold;
+text-align: center;
+margin-top: 12px;
+margin-bottom: 12px;
+`
+
+export const ButtonPosition = styled.div`
+
+position: absolute;
+left: 90vw;
+
+
+`
+
+export const CardApproved = styled.div`
+
+margin: 20px;
+border-radius: 15px;
+height: 10vh;
+width: 15vw;
+color: white;
+background-image: url(${background});
+box-shadow: 15px 15px 15px black;
+display: flex;
+flex-direction: column;
+gap: 12px;
+padding-left: 5px;
+margin-left: 8vw;
+
+&:hover{
+
+  box-shadow: 15px 15px 15px lightskyblue;
+
+}
 `

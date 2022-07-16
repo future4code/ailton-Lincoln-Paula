@@ -122,7 +122,7 @@ justify-content: center;
 export const DivText = styled.div`
 
 background-color: white;
-margin-left: 5vw;
+margin-left: 8vw;
 margin-top: 15px;
 
 `
