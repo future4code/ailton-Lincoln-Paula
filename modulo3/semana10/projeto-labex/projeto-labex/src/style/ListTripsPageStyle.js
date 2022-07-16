@@ -101,6 +101,7 @@ padding-left: 5px;
 export const DivH1 = styled.div`
 
 margin-left: 32vw;
+margin-top: 25px;
 `
 
 export const H1 = styled.div`
@@ -115,22 +116,61 @@ export const DivCard = styled.div`
 display: flex;
 flex-wrap: wrap;
 gap: 16px;
-
+justify-content: center;
 `
 
 export const DivText = styled.div`
 
 background-color: white;
-margin: 5px;
+margin-left: 5vw;
+margin-top: 15px;
 
+`
+
+export const Carregando = styled.div`
+
+height: 250px;
+width: 250px;
+margin-top: 25vh;
+margin-left: -150px;
 
 `
 
 export const DivButtonCard = styled.div`
 
 
-margin-top: 5px;
 margin-left: 35vw;
 padding: 20px;
+
+`
+
+export const Planetas = styled.div`
+
+  display: flex;
+  margin-left: 10vw;
+  margin-top: 25px;
+
+`
+
+export const TextPrinc = styled.h1`
+
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+
+`
+
+export const TitleCard = styled.p`
+
+  text-align: center;
+  font-size: 25px;
+`
+
+export const DivContact = styled.div`
+
+margin-top: 20vh;
+margin-left: 20vw;
 
 `

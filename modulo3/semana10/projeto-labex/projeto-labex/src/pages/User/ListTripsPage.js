@@ -1,14 +1,20 @@
 import React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
-import { Button, ButtonGroup, Stack, Icon } from '@chakra-ui/react'
+import { Button, Stack, Icon } from '@chakra-ui/react'
+import {SpinnerIcon} from '@chakra-ui/icons'
 import {DivContainer, GlobalStyle,Header, TextHeader
   , DivBotoes, DivBackground, DivPrincipal, DivButtonCard,
-  DivCard,DivH1, H1,DivText,
+  DivCard,DivH1, H1,DivText, Carregando, Planetas, TextPrinc, TitleCard, DivContact,
   DivContainerBackground, Card} from './../../style/ListTripsPageStyle'
-import {useRequestDataGet, useRequestDataPost} from '../../constants/Hook/useRequestData'
+import {useRequestDataGet} from '../../constants/Hook/useRequestData'
 import {BASE_URL} from '../../constants/Url/url'
 import { goToPage } from '../../routes/coordinator'
 import {useNavigate} from 'react-router-dom'
+import astro from '../../assets/images/astronauta.jpg'
+import planets from '../../assets/images/planetas.png'
+import { AiFillFacebook } from 'react-icons/ai'
+import { AiFillInstagram } from 'react-icons/ai'
+import { MdEmail } from 'react-icons/md'
 
 function ListTripsPage() {
 
@@ -19,16 +25,20 @@ function ListTripsPage() {
 
   
 
-  const Viagens = data.map((viagens) => {
+  const Viagens = () =>{
+
+
+ return  data.map((viagens) => {
     return <Card key={viagens.id}>
-      <p><b>{viagens.name}</b></p>
-      <p><b>Planeta:</b>{viagens.planet}</p>
-      <p><b>Descrição:</b>{viagens.description}</p>
-      <p><b>Ida:</b>{viagens.date}</p>
-      <p><b>Duração:</b>{viagens.durationInDays}</p>
+      <TitleCard><b>{viagens.name}</b></TitleCard>
+      <p><b>Planeta:</b> {viagens.planet}</p>
+      <p><b>Descrição:</b> {viagens.description}</p>
+      <p><b>Ida:</b> {viagens.date}</p>
+      <p><b>Duração:</b> {viagens.durationInDays} Dias</p>
       </Card>
 
-  });
+  });}
+    
 
   return (
     <ChakraProvider>
@@ -44,7 +54,7 @@ function ListTripsPage() {
               Viagens
             </Button>
             <Button colorScheme='teal' variant='ghost'>
-              Promoções
+              Sobre nós
             </Button>
             <Button colorScheme='teal' variant='ghost'>
               Contate-nos
@@ -60,29 +70,83 @@ function ListTripsPage() {
       <DivBackground>
         
       <DivPrincipal>
+
+        <div>
+        <TextPrinc>Labex</TextPrinc>
+        <DivText>
+
+       
+        <p>Seja bem vindo ao nosso serviço de viagem interestelar, aqui você encontrará
+          todos os tipos de viagens, para todos os planetas !
+        </p>
+        <p>Veja nossas viagens disponivéis, e se for do seu interesse, se cadastre
+          para poder entrar nessa viagem louca !
+        </p>
+        </DivText>
+        <Planetas>
+          <img src={planets} alt='planetas'></img>
+          </Planetas>
+        </div>
+
       <DivH1>
         <H1>Viagens Disponivéis !</H1>
 
         </DivH1>
         <DivCard>
 
-      {Viagens}
+      {data.length !== 0 ?
+      Viagens()
+      :
+      <Carregando><SpinnerIcon
+      width={'100px'}
+      height={'100px'}></SpinnerIcon>
+      <H1>Carregando</H1>
+      </Carregando>}
         </DivCard>
-     <DivText>
+     <DivText id='sobre'>
 
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
-  printer took a galley of type and scrambled it to make a type specimen book. It has survived not only 
-  five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was 
-  popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
-  recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>Somos uma empresa que atua no mercado de viagens a mais de 20 anos, ganhamos diversos prêmios
+      como companhia mais
+    </p>
+    <p>utilizada no setor de viagens !</p>
+    <p>Venha se tornar viagem interestelar e se candidate para uma de nossas viagens.</p>
      </DivText>
 
  <DivButtonCard>
-<Button colorScheme={'purple'}
-onClick={() => goToPage(Navigate, 'trips/application')}>Submeter</Button>
+<Button colorScheme={'gray'}
+bg={'black'}
+color={'white'}
+width={'150px'}
+height={'50px'}
+onClick={() => goToPage(Navigate, 'trips/application')}>Quero Viajar !</Button>
 </DivButtonCard>
+        <DivContact>
+            <a  href='https://facebook.com.br'
+            target='_blank'
+            >
+              <Icon as={AiFillFacebook}
+            width={'50px'}
+            height={'50px'}
+            color={'white'}/>
+              </a>
 
+              <a 
+              href='https://instagram.com.br'
+            target='_blank'>
+            <Icon as={AiFillInstagram}
+            width={'50px'}
+            height={'50px'}
+            color={'white'}/> </a>
+
+              <a 
+              href='https://email.com.br'
+            target='_blank'>
+            <Icon as={MdEmail}
+            width={'50px'}
+            height={'50px'}
+            color={'white'}/></a>
+        </DivContact>
+      
       </DivPrincipal>
 
         </DivBackground> 

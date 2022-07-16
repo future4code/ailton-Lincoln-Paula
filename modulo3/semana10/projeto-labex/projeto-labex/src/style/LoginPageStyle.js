@@ -56,29 +56,31 @@ height: 88vh;
 export const Main = styled.div`
 
 width: 80vw;
-background-color: #3F0071;
 opacity: 0.9;
 height: 100%;
-box-shadow: 15px 15px 15px black;
-border: black solid ;
 display: flex;
 justify-content: center;
 `
 
 export const DivLogin = styled.div`
 
-background-image: url(${background});
-color: white;
+background-color: white;
+color: black;
 font-weight: bold;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 row-gap: 2vh;
-height: 35vh;
-margin-top: 30vh;
+height: 45vh;
+margin-top: 20vh;
 border-radius: 25px;
 box-shadow: black 15px 15px 15px ;
 padding: 50px;
+`
 
+export const TitleLogin = styled.h1`
+
+  font-weight: bold;
+  margin-top: 4vh;
 `

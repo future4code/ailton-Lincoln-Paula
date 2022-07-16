@@ -5,7 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Button, ButtonGroup, Stack, Icon} from '@chakra-ui/react'
 import {DeleteIcon, CheckIcon, CloseIcon, ArrowBackIcon } from '@chakra-ui/icons'
 import {GlobalStyle, DivContainer, Main, Header, TextHeader, DivBotoes, CardTrip, DivBackground, Text,
-  DivHeaderBackground, DivHeaderBackgroundButton, DivHeaderBackgroundYellow } 
+  DivHeaderBackground, DivHeaderBackgroundButton, DivHeaderBackgroundYellow, Card} 
 from '../../style/AdminDetailTripPageStyle'
 import { BASE_URL } from '../../constants/Url/url'
 import {useRequestDataGet} from './../../constants/Hook/useRequestData' 
@@ -26,6 +26,12 @@ function AdminDetailTrip(props) {
           goToPage(Navigate, 'login')
         
         }
+        getTripDetail()
+
+  },[])
+
+
+  const getTripDetail = () =>{
     const token = localStorage.getItem('token')
     axios.get(`${BASE_URL}/trip/${params.id}`,{
       headers:{
@@ -33,9 +39,8 @@ function AdminDetailTrip(props) {
       }
     })
     .then((res) =>{
-      console.log(res.data)
       setTripDetail(res.data.trip)
-      setCandidate(res.data.trip.candidate)
+      setCandidate(res.data.trip.candidates)
       setApproved(res.data.trip.approved)
 
     })
@@ -44,20 +49,91 @@ function AdminDetailTrip(props) {
       alert(err)
 
     })
-  },[])
+  }
 
 
-  // const detalhesViagem = tripDetail.map((detail)=>{
+  const detalhesViagem = () =>{
 
-  //   return <p></p>
+    return <div>
+ 
+       <h1>Viagem</h1>
+       <p>Planeta:{tripDetail.planet}</p>
+       <p>Nome:{tripDetail.name}</p> 
+       <p>Descrição:{tripDetail.description}</p>
+       <p>Duração:{tripDetail.durationInDays} dias</p>
+       <p>Data:{tripDetail.date}</p>
+       
+       </div>
+   } 
 
-  // })
+  const RetornaCandidatos = () =>{
 
+    return candidate.map((info)=>{
+
+      return <div>
+
+        <p>{info.name}</p>
+        <p>{info.age}</p>
+        <p>{info.profession}</p>
+        <p>{info.applicationText}</p>
+        <p>{info.country}</p>
+        <button onClick={()=> decideCandidate(info.id, true)}>Aprovar</button>
+        <button onClick={()=> decideCandidate(info.id, false)}>Não aprovar</button>
+      </div>  
+    })
+
+
+  }
+
+  const decideCandidate = (id, approved) =>{
+    const token = localStorage.getItem('token')
+    const body = {
+      approve: approved
+    }
+    axios.put(`${BASE_URL}/trips/${params.id}/candidates/${id}/decide`,body,{
+      headers:{
+        auth: token
+      }
+    })
+    .then((res)=>{
+
+      console.log(res)
+      if(approved === true){
+        return alert('Candidato Aprovado !')
+      }else{
+        return alert('Candidato Negado !')
+      }
+
+    })
+
+
+    .catch((err)=>{
+
+    alert(err)
+    console.log(err)
+    })
+
+
+  }
+
+  const aprovados = () =>{
+    
+    return approved.map((candidate)=>{
+
+      return <div>
+        <p>{candidate.name}</p>
+        <p>{candidate.age}</p>
+        <p>{candidate.profession}</p>
+        <p>{candidate.applicationText}</p>
+        <p>{candidate.country}</p>
+      </div>
+
+    })
+  }
 
   return (
 
     <ChakraProvider>
-      {/* {console.log(tripDetail)} */}
     <DivContainer>
       <GlobalStyle>
         </GlobalStyle>
@@ -114,19 +190,25 @@ onClick={() => goToPage(Navigate, 'admin/trips/list')}
         </DivHeaderBackgroundButton>
           </DivHeaderBackground>
 
+          {tripDetail.length !== 0 ?
+                detalhesViagem()
+                    : <h1>...Carregando</h1>}
 
       <div>
-        {/* <h1>Viagem</h1>
-        <p>Nome:{tripDetail.trip.name}</p>
-        <p>Descrição:{tripDetail.trip.description}</p>
-        <p>Planeta:{tripDetail.trip.planet}</p>
-        <p>Duração:{tripDetail.trip.durationInDays} dias</p>
-        <p>Data:{tripDetail.trip.date}</p> */}
-      </div>
-
-      <div>
+        <section>
       <h1>Candidatos</h1>
-      {/* <p>Candidato: {tripDetail.trip.candidates.name}</p> */}
+          {candidate.length !== 0 ?
+          RetornaCandidatos()
+        : <p>Nenhum candidato !</p>}
+        </section>
+ 
+        <section>
+            <h1>Aprovados</h1>
+          {approved.length !== 0 ?
+          aprovados()
+        : <p>...Sem Candidatos !</p>}
+        </section>  
+            
       </div>
       
         </DivBackground>

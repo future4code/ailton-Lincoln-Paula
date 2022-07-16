@@ -15,65 +15,87 @@ import axios from 'axios'
 
 function AdminHomePage() {
 
-  const [data] = useRequestDataGet(`${BASE_URL}/trips`);
+  const [data, setData] = useState([]);
   const Navigate = useNavigate()
 
+  const pegaTrips = () => {
+
+      axios.
+        get(`${BASE_URL}/trips`)
+        .then((res) => {
+
+          setData(res.data.trips);
+
+
+        })
+        .catch((err) => {
+        });
+    }
+ 
+  
+
+
+  
+  
   useEffect(()=>{
     
     if(localStorage.getItem('token') === null){
       goToPage(Navigate, 'login')
       
     }
+    pegaTrips()
+    renderizaTrip()
+
   },[])
   
 
-  const renderizaTrip =() =>{
+  
+  
+  const delThisTrip = (id) =>{
+    
+    const confirm = window.confirm('Deseja deletar ?')
+    const token = localStorage.getItem('token')
+    
+    if(confirm){
       
-  return  data.map((viagens) => {
+      axios.delete(`${BASE_URL}/trips/${id}`, {
+        headers:{
+          auth: token
+        }})
+      
+      .then((res)=>{  
+      alert(`Viagem deletada !`)
+      pegaTrips()
 
-      return <CardTrip key={viagens.id}>
-        <p onClick={() =>goToPage(Navigate, `admin/trips/${viagens.id}`)}>{viagens.name}</p>
-        <DeleteIcon
-        marginRight={5}
-        marginTop={1}
-        onClick={() => delThisTrip(viagens.id)}/>
+    }).catch((err)=>{
+      
+      alert('Não foi possível deletar !')
+      
+    })
+  }
+  
+  
+}
+const renderizaTrip =() =>{
+    
+return  data.map((viagens) => {
 
-        </CardTrip>
+    return <CardTrip key={viagens.id}>
+      <p onClick={() =>goToPage(Navigate, `admin/trips/${viagens.id}`)}>{viagens.name}</p>
+      <DeleteIcon
+      marginRight={5}
+      marginTop={1}
+      onClick={() => delThisTrip(viagens.id)}/>
+
+      </CardTrip>
 });
 
 
-  }
-
-
- const delThisTrip = (id) =>{
-
-  const token = localStorage.getItem('token')
-
-  axios.delete(`${BASE_URL}/trips/${id}`, {
-    headers:{
-      auth: token
-    }
-  })
-  
-  
-  .then((res)=>{  
-    console.log(res)
-    alert(`deu certo !`)
-    renderizaTrip()
-
-  }).catch((err)=>{
-
-    console.log(err)
-    console.log('deu ruim!')
-
-  })
-
- }
+}
 
   return (
 
     <ChakraProvider>
-
     <DivContainer>
       <GlobalStyle>
         </GlobalStyle>
@@ -114,7 +136,9 @@ function AdminHomePage() {
           
         </DivHeaderBackgroundButton>
           </DivHeaderBackground>
-      {renderizaTrip()}
+      {data.length !== 0 ? 
+      renderizaTrip()
+     :<p>...carregando</p>}
         </DivBackground>
 
       </Main>

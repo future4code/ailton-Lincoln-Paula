@@ -61,24 +61,52 @@ opacity: 0.9;
 height: 100%;
 box-shadow: 15px 15px 15px black;
 border: black solid ;
-display: flex;
-justify-content: center;
 `
 
-export const DivLogin = styled.div`
+export const DivInput = styled.div`
 
-background-image: url(${background});
-color: white;
-font-weight: bold;
 display: flex;
 flex-direction: column;
-align-items: center;
-justify-content: center;
-row-gap: 2vh;
-height: 35vh;
-margin-top: 30vh;
-border-radius: 25px;
-box-shadow: black 15px 15px 15px ;
-padding: 50px;
+`
 
+export const Form = styled.form`
+
+display: flex;
+flex-direction: column;
+margin: 5px;
+gap: 10px;
+margin-left: 28vw;
+margin-top: 15vh;
+width: 25vw;
+`
+
+export const Button = styled.button`
+
+
+background-color: white;
+color: black;
+font-weight: bold;
+width: 10vw;
+height: 8vh;
+margin-left: 8vw;
+border-radius: 15px;
+box-shadow: 15px 15px 15px black;
+
+&:hover{
+
+  box-shadow: 15px 15px 15px lightskyblue;
+
+}
+`
+export const Card = styled.div`
+margin: 20px;
+border-radius: 15px;
+height: 40vh;
+width: 30vw;
+background-color: white;
+box-shadow: 15px 15px 15px black;
+display: flex;
+flex-direction: column;
+gap: 12px;
+padding-left: 5px;
 `

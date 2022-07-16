@@ -1,19 +1,15 @@
 import React from 'react'
-import {DivContainer, GlobalStyle, Main, DivLogin, DivCentralizaMain} from './../../style/LoginPageStyle'
+import {DivContainer, GlobalStyle, Main, DivCentralizaMain, DivInput, Form ,Button, Alert} from './../../style/TripDetailPageStyle'
 import { useState, useEffect } from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
-import { Button, ButtonGroup, Stack, Icon, Input, Box,  
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText, } from '@chakra-ui/react'
-import {useRequestDataPost, useRequestDataGet} from '../../constants/Hook/useRequestData'
+import {useRequestDataGet} from '../../constants/Hook/useRequestData'
 import {BASE_URL} from '../../constants/Url/url'
 import {useNavigate} from 'react-router-dom'
 import {goToPage} from './../../routes/coordinator'
 import { TextHeader, Header} from './../../style/LoginPageStyle'
 import {useForm} from './../../constants/Hook/useForm'
 import axios from 'axios'
+
 
 function TripDetailsPage() {
 
@@ -62,12 +58,12 @@ function TripDetailsPage() {
     axios.post(`${BASE_URL}/trips/${trip}/apply`, body)
     .then((res)=>{
 
-      alert(`Deu certo !`)
+      alert(`Você se candidatou !`)
       console.log(res)
     })
     .catch((err)=>{
 
-      alert(err)
+      alert(`Não foi possível lhe cadastrar !`)
 
 
     })
@@ -92,9 +88,9 @@ function TripDetailsPage() {
       <DivCentralizaMain>
 
       <Main>
-        <div>
+        <DivInput>
 
-        <form 
+        <Form 
           onSubmit={submitOnTrip}>
 
         <select
@@ -393,9 +389,9 @@ function TripDetailsPage() {
                 <option value="Zimbabwe">Zimbabwe</option>
           </select>
 
-          <button>submeter viagem</button>
-          </form>
-        </div>
+          <Button>Candidate-se</Button>
+          </Form>
+        </DivInput>
       </Main>
       </DivCentralizaMain>
     </DivContainer>
