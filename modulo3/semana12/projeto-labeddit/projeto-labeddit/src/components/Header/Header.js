@@ -1,5 +1,5 @@
-import React from "react";
-import logo from './../../assets/images/logo.png'
+import React, { useEffect, useState } from "react";
+import logo from "./../../assets/images/logo.png";
 import { DivContainer, DivMenuContainer } from "./style";
 import {
   Input,
@@ -15,23 +15,49 @@ import {
 } from "@chakra-ui/react";
 import { SearchIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { BsFillPersonFill } from "react-icons/bs";
-import { IoIosLogOut} from "react-icons/io";
-import {MdOutlinePersonAddAlt} from "react-icons/md";
+import { IoIosLogOut } from "react-icons/io";
+import { MdOutlinePersonAddAlt } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import goToPage from './../../routes/coordinator'
+import goToPage from "./../../routes/coordinator";
+import { logout } from "./../../services/user";
 
 const Header = () => {
+  const [tokenChange, setTokenChange] = useState(1);
+  const Navigate = useNavigate();
 
-  const Navigate = useNavigate()  
+  useEffect(() => {
+    setTokenChange(1);
+    menuChoose();
+  }, [tokenChange]);
 
+  const menuChoose = () => {
+    const token = localStorage.getItem("login");
+    if (token) {
+      return (
+        <div>
+          <div>
+            <MenuItem icon={<MdOutlinePersonAddAlt />}>Logado</MenuItem>
+          </div>
 
-  const consola = () => {
-    console.log("caiu");
+          <div onClick={() => logout(tokenChange, setTokenChange)}>
+            <MenuItem icon={<IoIosLogOut />}>Sair</MenuItem>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div onClick={() => goToPage(Navigate, "signup")}>
+          <MenuItem icon={<MdOutlinePersonAddAlt />}>
+            Logar / Cadastrar
+          </MenuItem>
+        </div>
+      );
+    }
   };
 
   return (
     <DivContainer>
-      <img src={logo} onClick={()=>goToPage(Navigate,'')}></img>
+      <img src={logo} onClick={() => goToPage(Navigate, "")}></img>
       <InputGroup>
         <InputLeftElement children={<SearchIcon />} />
         <Input
@@ -41,7 +67,7 @@ const Header = () => {
         ></Input>
       </InputGroup>
       <DivMenuContainer>
-        <Icon as={BsFillPersonFill} w={4} h={12}  marginBottom={0}/>
+        <Icon as={BsFillPersonFill} w={4} h={12} marginBottom={0} />
 
         <Menu>
           <MenuButton
@@ -50,25 +76,9 @@ const Header = () => {
             icon={<ChevronDownIcon />}
             marginBlock={1}
             marginBottom={0}
-            variant="outline"
+            variant="ghost"
           />
-          <MenuList>
-          <div onClick={() => goToPage(Navigate, 'login')}>
-            <MenuItem 
-            icon={<MdOutlinePersonAddAlt />}
-            >
-                Entrar / Cadastrar-se
-            </MenuItem>
-            </div>
-           
-            <div onClick={consola}>
-            <MenuItem
-            icon={<IoIosLogOut />}
-            >
-                Sair
-            </MenuItem>
-            </div>
-          </MenuList>
+          <MenuList>{menuChoose()}</MenuList>
         </Menu>
       </DivMenuContainer>
     </DivContainer>

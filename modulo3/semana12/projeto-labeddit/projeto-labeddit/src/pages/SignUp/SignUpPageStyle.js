@@ -17,7 +17,7 @@ align-items: center;
 `
 
 export const DivCadastro = styled.div`
-margin-left: 6%;
+margin-left: 14%;
 
 `
 
@@ -25,7 +25,7 @@ export const Text = styled.p`
 display: flex;
 `
 
-export const TextBold = styled.p`
+export const TextBold = styled.span`
 
 color: blue;
 margin-left: 3%;
@@ -92,4 +92,14 @@ export const CadastroText = styled.h1`
 
 font-weight: bold;
 font-size: 18px;
+`
+export const ButtonForm = styled.button`
+
+color: white;
+background-color: rgb(255,69,0);
+padding: 4%;
+border-radius: 20px;
+width: 75%;
+
+
 `

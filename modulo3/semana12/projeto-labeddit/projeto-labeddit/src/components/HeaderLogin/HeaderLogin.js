@@ -10,10 +10,6 @@ const HeaderLogin = () => {
   const Navigate = useNavigate()  
 
 
-  const consola = () => {
-    console.log("caiu");
-  };
-
   return (
     <DivContainer>
 
