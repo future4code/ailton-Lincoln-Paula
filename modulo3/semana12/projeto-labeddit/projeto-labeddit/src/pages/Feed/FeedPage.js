@@ -6,6 +6,8 @@ import Header from '../../components/Header/Header'
 import useRequestData from '../../hooks/useRequestData'
 import { BASE_URL } from '../../constants/urls'
 import Card from './../../components/Card/Card'
+import CreatePost from './../../components/CreatePost/CreatePost'
+import {DivContainerFeedPage} from './FeedPageStyle'
 
 const FeedPage = () =>{
 const Posts = useRequestData([], `${BASE_URL}/posts`)
@@ -13,12 +15,13 @@ const Navigate = useNavigate()
 
 return(
 
-    <div>
+    <DivContainerFeedPage>
         <Header/>
+        <CreatePost/>
         {Posts[1]}
         {<Card  posts={Posts[0]}/>}
 
-    </div>
+    </DivContainerFeedPage>
 )
 
 

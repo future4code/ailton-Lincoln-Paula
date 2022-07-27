@@ -5,7 +5,9 @@ export const DivContainer = styled.div`
 margin: 1%;
 height: 6vh;
 display: flex;
-
+background-color: white;
+width: 100vw;
+margin-left: -1px;
 img{
 
     width: 32px;

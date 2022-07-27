@@ -4,12 +4,12 @@ export const DivContainerCard = styled.div`
 display: flex;
 flex-direction: column;
 background-color: white;
-width: 100%;
+width: 95%;
 gap: 25px;
 margin-top: 10px;
-border-top: solid 1px gray;
-border-bottom: solid 1px gray;
+border: solid 1px gray;
 min-height: 25vh;
+margin-left: 2%;
 `
 
 export const DivTitle = styled.div`
@@ -37,6 +37,7 @@ export const DivPhoto = styled.div`
 display: flex;
 margin-left: 2%;
 gap: 1%;
+margin-top: 1%;
 
 `
 
