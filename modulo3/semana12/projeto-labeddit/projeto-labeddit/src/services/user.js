@@ -54,3 +54,50 @@ export const logout = async (contador, setContador) =>{
 
 
 }
+
+export const createPost = async (body, clear, Navigate) =>{
+
+    console.log(body)
+
+    await   axios.post(`${BASE_URL}/posts`,body,{
+        headers:{
+            Authorization: localStorage.getItem('login')
+        }
+    })
+       
+       .then((res)=>{
+        
+           clear()   
+           console.log(res)
+   
+       })
+       .catch((err)=>{
+   
+           alert(err.response.data)
+   
+       })
+   
+   
+   }
+
+   export const createComment = async (body, clear, id) =>{
+
+
+    await   axios.post(`${BASE_URL}/posts/${id}/comments`,body,{
+        headers:{
+            Authorization: localStorage.getItem('login')
+        }
+    })
+       
+       .then((res)=>{
+        
+           clear()   
+           console.log(res)
+   
+       })
+       .catch((err)=>{
+   
+           alert(err.response.data)
+   
+       })
+   }

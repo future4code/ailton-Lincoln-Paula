@@ -6,9 +6,10 @@ const useRequestData = (initialData, url) =>{
 
 const [data, setData] = useState(initialData)
 const [userLogin, setUserLogin] = useState('')
+const [isLoading, setIsLoading] = useState(false)
 
     useEffect(()=>{
-    
+    setIsLoading(true)
     axios.get(url, {
         headers:{
             Authorization: localStorage.getItem('login')
@@ -17,7 +18,7 @@ const [userLogin, setUserLogin] = useState('')
     .then((res)=>{
 
     setData(res.data)
-
+    setIsLoading(false)
     })
     .catch((err)=>{
 
@@ -28,7 +29,7 @@ const [userLogin, setUserLogin] = useState('')
 
 
 
-return [data, userLogin]
+return [data, userLogin, isLoading, setUserLogin]
 
 
 

@@ -91,3 +91,27 @@ p{
 }
 
 `
+
+export const DivInput = styled.div`
+
+display: flex;
+gap: 5%;
+margin-top: 5%;
+margin-bottom: 5%;
+
+`
+
+export const TextCentralize = styled.p`
+
+
+display: flex;
+justify-content: center;
+margin-top: 9vh;
+`
+
+export const DivCommentContainer1 = styled.div`
+
+border: solid 1px gray;
+
+
+`

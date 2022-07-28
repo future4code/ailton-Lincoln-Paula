@@ -20,9 +20,7 @@ img{
 
 export const Button = styled.button`
 
-border: solid 1px gray;
-border-radius: 100%;
-width: 8%;
+width: 10%;
 
 
 :active{
@@ -33,4 +31,9 @@ width: 8%;
 }
 
 
+`
+export const DivInput = styled.div`
+
+display: flex;
+flex-direction: column;
 `

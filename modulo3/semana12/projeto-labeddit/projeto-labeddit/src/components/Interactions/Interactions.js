@@ -11,47 +11,14 @@ import {DivContainerInteractions, DivAlinhamento, DivCommentContainer} from './I
 import {AiOutlineShareAlt} from "react-icons/ai"
 import { useNavigate } from "react-router";
 import goToPage from "../../routes/coordinator";
-
+import {voteInPost} from './../../services/vote'
 
 
 
 const Interactions = ({id,postInfo, dataTratada, dataTratada1}) =>{
 
 
-
-
-
-  const [interaction1, setInteraciton1] = useState(0)
-  const [interaction2, setInteraciton2] = useState(0)
-  const [interaction3, setInteraciton3] = useState(0)
   const Navigate = useNavigate()
-
-
-
-
-  
-
-
-  
-
-const Interaction = (id) =>{
-
-switch (id){
-  case 1:
-    setInteraciton1(1)
-    break;
-
-  case 2:
-    setInteraciton2(1)
-    break;
-
-  case 3:
-    setInteraciton3(1)
-    break;
-}
-
-}
-
 
 const Comment = (id) =>{
 
@@ -65,19 +32,42 @@ const Comment = (id) =>{
 
 }
 
+ const addVoteInPost = (interaction) =>{
+ 
+
+ const id = postInfo.id
+ const body = {
+  direction: interaction
+}
+  voteInPost(id,body)
+
+ }
+
+
+ 
 
     return(<DivContainerInteractions>
-       <DivAlinhamento><Icon as={TbArrowBigTop} w={10} h={6} marginBottom={0} onClick={() =>Interaction(1)}/>
-        {interaction1}
+       <DivAlinhamento><Icon as={TbArrowBigTop} w={10} h={6} marginBottom={0} onClick={() =>addVoteInPost(1)}/>
+        {postInfo.voteSum === 1 ?
+          postInfo.voteSum
+          :
+          0
+        }
 
-       <Icon as={TbArrowBigDown} w={10} h={6} marginBottom={0} onClick={() =>Interaction(2)}/>
-        {interaction2}
-
+       <Icon as={TbArrowBigDown} w={10} h={6} marginBottom={0}  onClick={() =>addVoteInPost(-1)}/>
+       {postInfo.voteSum === -1 ?
+          postInfo.voteSum
+          :
+          0
+        }
        <DivCommentContainer onClick={() =>Comment(id)}>
-        <Icon as={BiComment} w={10} h={6} marginBottom={0} onClick={() =>Interaction(3)}/>
+        <Icon as={BiComment} w={10} h={6} marginBottom={0}/>
         </DivCommentContainer>
        
-       {interaction3} Comments
+       {postInfo.commentCount === null ?
+               0
+               :
+        postInfo.commentCount} Comments
        
        
        </DivAlinhamento>
@@ -85,7 +75,7 @@ const Comment = (id) =>{
 
 
        <DivAlinhamento>
-       <Icon as={AiOutlineShareAlt} w={10} h={6} marginBottom={0} onClick={Interaction}/>
+       <Icon as={AiOutlineShareAlt} w={10} h={6} marginBottom={0}/>
        Share
        </DivAlinhamento>
     </DivContainerInteractions>)

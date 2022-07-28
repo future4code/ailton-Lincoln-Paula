@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {DivContainerCard, DivTitle, DivName, DivBody, ImageUser, DivPhoto, DivDate, GrayText, BlackText} from './CardStyle'
 import Interactions from './../Interactions/Interactions'
 
 
 const Card = ({posts}) =>{
 
+useEffect(()=>{
 
+
+    
+
+},[])
 
 const allPosts = posts.map((postInfo)=>{
 
-const data = postInfo.createdAt.split('-')
+        const data = postInfo.createdAt.split('-')
 
     return <DivContainerCard key={postInfo.id}>
         <DivPhoto>
