@@ -4,12 +4,12 @@ export const DivContainerCard = styled.div`
 display: flex;
 flex-direction: column;
 background-color: white;
-width: 95%;
+width: 90vw;
 gap: 25px;
 margin-top: 10px;
 border: solid 1px gray;
 min-height: 25vh;
-margin-left: 2%;
+margin-left: 1%;
 `
 
 export const DivTitle = styled.div`

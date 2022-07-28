@@ -10,8 +10,20 @@ import CreatePost from './../../components/CreatePost/CreatePost'
 import {DivContainerFeedPage} from './FeedPageStyle'
 
 const FeedPage = () =>{
+    
+    localStorage.removeItem('infoName')
+    localStorage.removeItem('infoTitle')
+    localStorage.removeItem('infoBody')
+    localStorage.removeItem('dataTratada')
+    localStorage.removeItem('dataTratada1')
+    
 const Posts = useRequestData([], `${BASE_URL}/posts`)
+
+
+
 const Navigate = useNavigate()
+
+
 
 return(
 

@@ -10,8 +10,13 @@ export const DivAlinhamento = styled.div`
 
 display: flex;
 justify-content: center;
-margin: 3%;
+padding-bottom: 1%;
+color: gray; 
+margin-right: 1%;
+`
 
-color: gray;
+export const DivCommentContainer = styled.div`
 
+display: flex;
+justify-content: center;
 `

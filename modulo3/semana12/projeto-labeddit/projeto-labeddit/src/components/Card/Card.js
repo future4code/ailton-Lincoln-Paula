@@ -25,7 +25,7 @@ const data = postInfo.createdAt.split('-')
 
         <DivTitle><b>{postInfo.title}</b></DivTitle>
         <DivBody>{postInfo.body}</DivBody>
-        <Interactions/>
+        <Interactions id={postInfo.id} postInfo={postInfo} dataTratada={data[0]} dataTratada1={data[1]}/>
     </DivContainerCard>
 
 

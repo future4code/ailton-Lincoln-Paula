@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const DivContainer = styled.div`
 
-margin: 1%;
+
 height: 6vh;
 display: flex;
 background-color: white;
