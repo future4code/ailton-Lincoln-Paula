@@ -5,11 +5,11 @@ import {
     Input,
     Icon,
   } from "@chakra-ui/react";
-import {Button, DivContainerCreatePost, DivInput} from './style'
+import {Button, DivContainerCreatePost, DivInput, DivForm} from './style'
 import {createPost} from './../../services/user'
 import {useForm} from './../../hooks/useForm'
-
-
+import { BASE_URL } from '../../constants/urls';
+import useRequestData from './../../hooks/useRequestData'
 
 const CreatePost = () =>{
     
@@ -25,8 +25,7 @@ const CreatePost = () =>{
     const criandoPost = () =>{
     
         createPost(body, cleanFields)
-    
-    
+        
     }
 
 
@@ -34,6 +33,9 @@ const CreatePost = () =>{
 
 
     return(<DivContainerCreatePost>
+        <DivForm onSubmit={criandoPost}>
+
+
 
         <img src='https://whatsfacil.com/assets/img/default-avatar.png'></img>
         <DivInput>
@@ -55,11 +57,13 @@ const CreatePost = () =>{
         value={form.body}
         placeholder='Post'
         w={52}
+        required
         h={12}></Input>
         
         </DivInput>
 
-        <Button onClick={criandoPost}><Icon as={ImArrowRight}/></Button>
+        <Button type='submit'><Icon as={ImArrowRight}/></Button>
+        </DivForm>
     </DivContainerCreatePost>)
 
 }

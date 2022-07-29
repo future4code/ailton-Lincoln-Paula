@@ -112,6 +112,6 @@ margin-top: 9vh;
 export const DivCommentContainer1 = styled.div`
 
 border: solid 1px gray;
-
+background-color: white;
 
 `

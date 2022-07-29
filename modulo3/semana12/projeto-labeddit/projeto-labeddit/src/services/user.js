@@ -1,6 +1,9 @@
 import axios from 'axios'
 import { BASE_URL } from '../constants/urls'
 import goToPage from './../routes/coordinator'
+import useRequestData from './../hooks/useRequestData'
+import { useParams } from 'react-router-dom'
+import { MdSettingsEthernet } from 'react-icons/md'
 
 export const login = async (body, clear, Navigate) =>{
 
@@ -69,6 +72,7 @@ export const createPost = async (body, clear, Navigate) =>{
         
            clear()   
            console.log(res)
+           useRequestData([], `${BASE_URL}/posts/`)
    
        })
        .catch((err)=>{
@@ -81,6 +85,7 @@ export const createPost = async (body, clear, Navigate) =>{
    }
 
    export const createComment = async (body, clear, id) =>{
+   
 
 
     await   axios.post(`${BASE_URL}/posts/${id}/comments`,body,{
@@ -93,11 +98,15 @@ export const createPost = async (body, clear, Navigate) =>{
         
            clear()   
            console.log(res)
+
+        
+       })
+         .catch((err)=>{
+   
+            console.log(err)
    
        })
-       .catch((err)=>{
-   
-           alert(err.response.data)
-   
-       })
+
+
+
    }

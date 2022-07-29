@@ -48,11 +48,12 @@ const Comment = (id) =>{
 
     return(<DivContainerInteractions>
        <DivAlinhamento><Icon as={TbArrowBigTop} w={10} h={6} marginBottom={0} onClick={() =>addVoteInPost(1)}/>
-        {postInfo.voteSum === 1 ?
+        {/* {postInfo.voteSum === 1 ?
           postInfo.voteSum
           :
           0
-        }
+        } */}
+        {postInfo.voteSum}
 
        <Icon as={TbArrowBigDown} w={10} h={6} marginBottom={0}  onClick={() =>addVoteInPost(-1)}/>
        {postInfo.voteSum === -1 ?

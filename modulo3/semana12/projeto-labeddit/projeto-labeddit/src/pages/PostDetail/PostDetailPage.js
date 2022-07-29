@@ -21,13 +21,13 @@ import {voteInComment} from './../../services/vote'
 import { DivCommentContainer } from '../../components/Interactions/InteractionsStyle'
 import Interactions from '../../components/Interactions/Interactions'
 
-
 const PostDetailPage = () =>{
-
 
 useProtectedPage()
 const {id} = useParams()
 const dataComments = useRequestData([], `${BASE_URL}/posts/${id}/comments`)
+
+
 
 const [form, onChange, cleanFields] = useForm({
     bodyComment: ''
@@ -43,7 +43,7 @@ const comentarios = dataComments[0].map((comentariosInfo)=>{
 
     return <DivCommentContainer1 key={comentariosInfo.id}>
         <DivPhoto>
-            
+
             <Image src='https://whatsfacil.com/assets/img/default-avatar.png'/>
             <GrayText>• Enviado por </GrayText> <BlackText>{comentariosInfo.username}</BlackText>
             </DivPhoto>
@@ -61,6 +61,7 @@ const addComment = () =>{
 
 }
 
+
 // const addVoteInComment = (interaction) =>{
 
 
@@ -74,7 +75,8 @@ const addComment = () =>{
     
 //      }
 
-     
+
+
 return(
         <DivContainerDetailPage>
         <Header/>
@@ -105,11 +107,11 @@ return(
     <button onClick={addComment}>{<ImArrowRight/>}</button>
         </DivInput>
 
-     <DivContainerCardComments>{dataComments[0].length === 0 ?
+     <div>{dataComments[0].length === 0 ?
                                 <TextCentralize>Sem comentários</TextCentralize>
                                 :
                                 comentarios}
-     </DivContainerCardComments>
+     </div>
     </DivContainerDetailPage>
 )
 

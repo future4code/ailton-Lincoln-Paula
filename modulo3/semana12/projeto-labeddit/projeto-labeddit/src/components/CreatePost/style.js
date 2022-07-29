@@ -9,7 +9,7 @@ padding-bottom: 3px;
 margin-top: 2%;
 background-color: white;
 width: 90vw;
-margin-left: 2%;
+margin-left: 1.5%;
 img{
     width: 32px;
     height: 32px;
@@ -36,4 +36,10 @@ export const DivInput = styled.div`
 
 display: flex;
 flex-direction: column;
+`
+
+export const DivForm = styled.form`
+
+display: flex;
+
 `
