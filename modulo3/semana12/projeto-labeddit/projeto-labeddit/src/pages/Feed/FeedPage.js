@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import goToPage from './../../routes/coordinator'
 import { Button } from '@chakra-ui/react'
@@ -11,7 +11,12 @@ import {DivContainerFeedPage, ImageLoading, DivLoading} from './FeedPageStyle'
 import loading from './../../assets/images/loading1.gif'
 
 const FeedPage = () =>{
+
+const [teste, setTeste] = useState()
+
     
+
+
     localStorage.removeItem('infoName')
     localStorage.removeItem('infoTitle')
     localStorage.removeItem('infoBody')
@@ -23,24 +28,57 @@ const setMessage = Posts[3]
 const isLoading = Posts[2]
 
 const Navigate = useNavigate()
+const Logado = localStorage.getItem('login')
 
+// const retornaFeed = () =>{
+
+// if(Logado && isLoading){
+//     return  <DivLoading>
+            
+//     <ImageLoading src={loading}></ImageLoading>
+//     </DivLoading>
+    
+// }
+
+
+// if(Logado === null){
+
+//   return   <div>
+//          <Header/>
+//          {Posts[1]}
+    
+//   </div>
+// }
+
+// else{
+//         <div>
+//         <Header/>
+//         <CreatePost/>
+//         <Card posts={Posts[0]}/> 
+//         </div>
+//     }
+// }
 
 
 return(
 
     <DivContainerFeedPage>
-        <Header/>
-        {Posts[1]}
+
         
-        {isLoading ?
-        <DivLoading><ImageLoading src={loading}></ImageLoading></DivLoading>
+        {isLoading  && Logado ?
+
+        <DivLoading>
+            
+            <ImageLoading src={loading}></ImageLoading></DivLoading>
+
+        
         :
         <div>
 
-
-        <CreatePost/>
+        <Header/>
+         {Posts[1]}
          <Card posts={Posts[0]}/>    
-         </div>  }
+         </div>  } 
 
     </DivContainerFeedPage>
 )
