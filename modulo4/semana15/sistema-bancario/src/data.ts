@@ -35,7 +35,7 @@ export const users: Users[] = [
     extract: [{
       valor: 390,
       data: "2-4-2022",
-      description: "transferência bancaria",
+      description: "transferência bancária",
     }],
   },
   {

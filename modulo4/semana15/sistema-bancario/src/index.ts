@@ -59,7 +59,7 @@ app.post("/createAccount", (req: Request, res: Response) => {
 
     idadeMaior18(body.birthDate);
 
-    if (
+    if(
       users.filter((user) => {
         return user.cpf === body.cpf;
       }).length > 0
@@ -144,8 +144,13 @@ app.put("/addBalance", (req: Request, res: Response) => {
   let errorNumber = 500;
   const body = req.body;
 
+  let hoje = new Date();
+  const diaAtual: number = hoje.getDate();
+  const anoAtual: number = hoje.getFullYear();
+  const mesAtual: number = hoje.getMonth() + 1;
+
   try {
-    if (!body.name || !body.cpf || body.add <= 0) {
+    if (!body.name || !body.cpf || body.value <= 0) {
       errorNumber = 400;
       throw new Error("Ei não pode mandar dados vazios!");
     }
@@ -157,7 +162,7 @@ app.put("/addBalance", (req: Request, res: Response) => {
       errorNumber = 404;
       throw new Error("Ei o cpf precisa ser um número !");
     }
-    if (typeof body.add !== "number") {
+    if (typeof body.value !== "number") {
       errorNumber = 404;
       throw new Error("Ei o saldo precisa ser um número !");
     }
@@ -179,8 +184,13 @@ app.put("/addBalance", (req: Request, res: Response) => {
           user.name.toLocaleLowerCase() === body.name.toLocaleLowerCase() &&
           user.cpf === body.cpf
         ) {
-          user.balance += body.add;
-          res.send(`Saldo adicionado ! saldo atual: ${user.balance}`);
+          user.balance += body.value;
+          user.extract.push({
+            valor: body.value,
+            data: `${diaAtual}-${mesAtual}-${anoAtual}`,
+            description: "Deposito de dinheiro"
+          })
+          res.send({ message:`Saldo adicionado ! saldo atual: ${user.balance}`, extrato: user.extract});
         }
       });
     } else {
@@ -275,6 +285,12 @@ app.put("/transfer", (req: Request, res: Response) =>{
    let errorNumber = 500;
     const body = req.body
 
+
+    let hoje = new Date();
+    const diaAtual: number = hoje.getDate();
+    const anoAtual: number = hoje.getFullYear();
+    const mesAtual: number = hoje.getMonth() + 1;
+
   try {
 
     if (!body.name || !body.cpf || body.value <= 0 || !body.destinatary) {
@@ -315,11 +331,40 @@ app.put("/transfer", (req: Request, res: Response) =>{
       throw new Error("Destinatário deve ser diferente do usuário !");
     }
 
-    // const transfer = users.filter((users)=>{
+   const verifyBalance =  users.filter((user)=>{
+      if(user.name === body.name){
+        if(user.balance < body.value){
+          errorNumber = 400
+          throw new Error("Saldo insuficiente !");
+        }
+      }
+     })
 
-      
 
-    // })
+    const transfer = users.filter((users)=>{
+
+      if(body.name.toLocaleLowerCase() === users.name.toLocaleLowerCase()){
+        users.balance -= body.value
+
+        users.extract.push({
+            valor: -body.value,
+            data: `${diaAtual}-${mesAtual}-${anoAtual}`,
+            description: `transferência bancária, destinário: ${body.destinatary} `
+        })
+      }
+
+      if(body.destinatary.toLocaleLowerCase() === users.name.toLocaleLowerCase()){
+        users.balance += body.value
+
+        users.extract.push({
+          valor: body.value,
+          data: `${diaAtual}-${mesAtual}-${anoAtual}`,
+          description: `transferência bancária, remetende: ${body.name} `
+      })
+      }
+    })
+
+    res.send({message: "Transferência concluída !", data: users})
 
   } catch (error: any) {
       res.status(errorNumber).send({ message: error.message });
