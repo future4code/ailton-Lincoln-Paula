@@ -1,0 +1,1 @@
+1 - a) A resposta que temos quando usamos o raw, é exatamente e mesma quando fazemos a query de select no nosso banco de dados, por isso colocamos [0], tratando o dados que queremos que o nosso front end, ou nós mesmos queremos ver de fato.
