@@ -76,5 +76,6 @@ LEFT JOIN Rating ON Movie.id = Rating.movie_id GROUP BY(Movie.id) ;
 ### Exercício 5-a-b-c) 
 
 ```
+
 ```
 
