@@ -6,6 +6,10 @@ import getUserID from './endpoints/getUserID'
 import editUser from './endpoints/editUserNickname'
 import createTask from './endpoints/createTask'
 import getTaskID from './endpoints/getTaskID'
+import getAllUsers from './endpoints/getAllUsers'
+import getTaskForIdUser from './endpoints/getTaskForIdUser'
+import getUserForName from './endpoints/getUserForName'
+
 
 const app: Express = express();
 app.use(express.json());
@@ -17,6 +21,10 @@ app.get('/user/:id', getUserID)
 app.put('/user/edit/:id', editUser)
 app.post('/task', createTask )
 app.get('/task/:id',getTaskID )
+app.get('/users/all', getAllUsers)
+app.get('/task', getTaskForIdUser)
+app.get('/user', getUserForName)
+
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

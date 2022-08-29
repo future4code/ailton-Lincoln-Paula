@@ -1,10 +1,11 @@
-import {connection} from './../data/baseDataBase'
+import {connection} from './baseDataBase'
 
 
-export default async function  getUserIDData(id:string){
+export default async function  getTaskIDData(id:string){
 
    const result = await connection.raw(`
-    SELECT * FROM TodoListTask WHERE id = "${id}"
+   SELECT * FROM User_To_Do_List 
+   INNER JOIN TodoListTask ON User_To_Do_List.id = TodoListTask.id WHERE User_To_Do_List.id = "${id}"
    
    `)
 
