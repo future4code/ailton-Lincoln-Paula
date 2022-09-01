@@ -7,7 +7,7 @@ export async function createProduct(req: Request,res: Response): Promise<void> {
    try {
 
       const product = req.body
-     
+      
       if(!product.name || !product.price || !product.image_url){
         res.statusCode = 400
         throw new Error(`Dados indefinidos, verifique seus dados novamente !`)
@@ -20,7 +20,7 @@ export async function createProduct(req: Request,res: Response): Promise<void> {
 
      const newProduct:Produtc = {
 
-        id: String(Math.floor(Math.random() * 100)),
+        id: String(Date.now()),
         name: product.name,
         price: product.price,
         image_url: product.image_url

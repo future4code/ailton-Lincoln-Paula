@@ -13,7 +13,7 @@ try {
       
       `)
 
-       console.log(products[0])
+      
 
     
 } catch (error:any) {

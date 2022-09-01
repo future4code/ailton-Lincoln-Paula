@@ -12,6 +12,7 @@ export type PurchasesUser = {
 export async function getPurchasesData(userId:string):Promise<any>{
 
     try {
+        console.log('caiu aq', userId)
 
       const result = await connection.raw(`
         
