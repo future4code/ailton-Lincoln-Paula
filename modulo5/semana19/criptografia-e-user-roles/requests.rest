@@ -1,0 +1,5 @@
+http://localhost:3003/user/profile
+
+{
+    Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2NjMwMTIwOTQsImV4cCI6MTY2MzA5ODQ5NH0.eQCbM_iWQCkfaxH7OESF8Eopz8C4ufJggOYBgrWViAE"
+}
