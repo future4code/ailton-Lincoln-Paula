@@ -6,7 +6,7 @@ Projeto cookenu consiste em criar o backend de uma aplicacão voltada para recei
 ```
 
 
-
+Documentação: https://documenter.getpostman.com/view/21551951/2s7YfSeZDg
 
 
 ## Tecnologias Utilizadas: 
