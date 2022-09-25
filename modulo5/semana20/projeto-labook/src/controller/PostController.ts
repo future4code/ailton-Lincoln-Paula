@@ -35,6 +35,8 @@ export class PostController {
             
             const response  = await this.postBusiness.getPosts(token)
 
+            res.status(200).send(response)
+
         } catch (error: any) {
 
             res.status(400).send({ message: error.message })

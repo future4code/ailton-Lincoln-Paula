@@ -1,5 +1,5 @@
 import { PostDatabase } from "../database/PostDatabase"
-import { IPostInputDTO, Post, IPostOutputDTO } from "../models/Post"
+import { IPostInputDTO, Post, IPostOutputDTO, IGetPostsOutputDTO } from "../models/Post"
 import { Authenticator, ITokenPayload } from "../services/Authenticator"
 import { IdGenerator } from "../services/IdGenerator"
 
@@ -55,8 +55,25 @@ export class PostBusiness {
 
         const posts = await this.postDatabase.getPosts()
 
-        return posts
+        const mapPosts = posts.map((post) =>{
+            return new Post(post.id, 
+                            post.content, 
+                            post.user_id)
+        })
 
+       for(let post of mapPosts){
+
+        const postId = post.getId()
+
+        const likes = await this.postDatabase.getLikes(postId)
+
+        post.setLikes(likes)
     }
+        
+
+        // const response = this.postDatabase.postModelLike(posts)
+        
+        // return response
+    }   
 
 }

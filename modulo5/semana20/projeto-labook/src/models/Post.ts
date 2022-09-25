@@ -59,3 +59,15 @@ export interface IPostInputDTO {
 export interface IPostOutputDTO {
 message: string
 }
+
+export interface IGetPostsOutputDTO {
+    posts: Post[] 
+
+}
+
+export interface IPostLikeDB {
+    id: string,
+    content: string,
+    user_id: string,
+    like:number
+}
