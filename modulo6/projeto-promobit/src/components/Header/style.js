@@ -1,18 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const DivLogo = styled.div`
-background-color: #5C16C5;
-height: 56px;
-`
-
-export const DivHeader = styled.div`
-background-color: #2D0C5E;
-height: 449px;
-
-p {
-margin: 0;
-color: white;
-
-}
-
+export const DivContainer = styled.header`
+    background-color: #5C16C5;
+    z-index:4;
+    position: fixed;
+    width: 100vw;
+    img {
+       margin: 1rem 0 1rem 5.5rem;
+       cursor: pointer;  
+    }
 `

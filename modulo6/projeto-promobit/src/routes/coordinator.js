@@ -1,7 +1,8 @@
-const goToPage = (Navigate, Page) =>{
+export function goToPage(navigate, page) {
+    navigate(`${page}`)
+}
 
-    Navigate(`/${Page}`)
-    
-    }
-    
-    export default goToPage 
+export function goToMovieDetails(navigate, id) {
+    navigate(`/movie/${id}`)
+}
+

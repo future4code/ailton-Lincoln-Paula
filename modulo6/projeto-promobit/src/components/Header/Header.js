@@ -1,17 +1,21 @@
+import logoTMDB from '../../Assets/images/logo.svg'
 import React from 'react'
-import {DivLogo, DivHeader} from './style' 
+import { DivContainer } from './style';
+import { useNavigate } from 'react-router-dom'
+import { goToPage } from '../../Routes/Coordinator';
 
-function Header() {
+export default function Header() {
+
+  const navigate = useNavigate()
 
   return (
-    <div>
-    <DivLogo>DivLogo</DivLogo>
-    <DivHeader>
-        <p>Milhões de filmes, séries e pessoas para descobrir. Explore já.</p>
 
-    </DivHeader>
-    </div>
+    <DivContainer>
+        <img
+          src={logoTMDB}
+          alt="Logo TMDB"
+          onClick={() => goToPage(navigate, "/")}
+        />
+    </DivContainer>
   )
 }
-
-export default Header

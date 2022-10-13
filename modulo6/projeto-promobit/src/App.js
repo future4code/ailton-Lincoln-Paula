@@ -1,10 +1,17 @@
-import Router from "./routes/Router";
+import Header from './Components/Header/Header';
+import Router from './Routes/Router'
+import Provider from './Global/GlobalState';
+import { GlobalStyle } from './Global/GlobalStyle'
 
+export default function App() {
 
-function App() {
   return (
-    <Router />
-  );
-}
 
-export default App;
+    <Provider>
+      <Header/>
+      <Router/>
+      <GlobalStyle/>
+    </Provider>
+
+  )
+}
