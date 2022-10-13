@@ -48,6 +48,6 @@ OBS: Em todos os metódos será necessário o Git Bash, e o node previamente ins
 ## ✒️ Autores
 
 ## INTEGRANTE
-Perfil      | Link do perfil no GITHUB
---------- | ------
-[<img src="https://avatars.githubusercontent.com/desenvolvedor1" width="75px;"/>](https://github.com/desenvolvedor1) | [Desenvolvedor 1](https://github.com/desenvolvedor1)
+https://github.com/lincolnRp
+
+![vue-color-avatar](https://user-images.githubusercontent.com/93271677/195719553-fa3bdb3c-7fb0-41bb-b6f2-9ca6ef6b26de.png)
